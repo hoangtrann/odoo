@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import copy
+import re
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 from odoo.osv import expression
@@ -126,7 +127,7 @@ class AccountReconciliation(models.AbstractModel):
         self.env['res.partner']._apply_ir_rules(ir_rules_query, 'read')
         from_clause, where_clause, where_clause_params = ir_rules_query.get_sql()
         if where_clause:
-            where_partner = ('AND %s' % where_clause).replace('res_partner', 'p3')
+            where_partner = re.sub(r"\bres_partner\b", "p3", ('AND %s' % where_clause))
             params += where_clause_params
         else:
             where_partner = ''
@@ -251,6 +252,7 @@ class AccountReconciliation(models.AbstractModel):
 
         results.update({
             'statement_name': len(bank_statements_left) == 1 and bank_statements_left.name or False,
+            'statement_id': len(bank_statements_left) == 1 and bank_statements_left.id or False,
             'journal_id': bank_statements and bank_statements[0].journal_id.id or False,
             'notifications': []
         })
@@ -492,6 +494,7 @@ class AccountReconciliation(models.AbstractModel):
             '|', ('account_id.code', 'ilike', search_str),
             '|', ('move_id.name', 'ilike', search_str),
             '|', ('move_id.ref', 'ilike', search_str),
+            '|', ('payment_id.name', 'ilike', search_str),
             '|', ('date_maturity', 'like', parse_date(self.env, search_str)),
             '&', ('name', '!=', '/'), ('name', 'ilike', search_str)
         ]
@@ -633,6 +636,10 @@ class AccountReconciliation(models.AbstractModel):
             domain = expression.AND([[('id', 'not in', excluded_ids)], domain])
         if search_str:
             str_domain = self._domain_move_lines(search_str=search_str)
+            str_domain = expression.OR([
+                str_domain,
+                [('partner_id.name', 'ilike', search_str)]
+            ])
             domain = expression.AND([domain, str_domain])
         # filter on account.move.line having the same company as the given account
         account = self.env['account.account'].browse(account_id)

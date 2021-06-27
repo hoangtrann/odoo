@@ -192,8 +192,12 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('name', '/') == '/':
-            vals['name'] = self.env['ir.sequence'].next_by_code('repair.order') or '/'
+        # To avoid consuming a sequence number when clicking on 'Create', we preprend it if the
+        # the name starts with '/'.
+        vals['name'] = vals.get('name') or '/'
+        if vals['name'].startswith('/'):
+            vals['name'] = (self.env['ir.sequence'].next_by_code('repair.order') or '/') + vals['name']
+            vals['name'] = vals['name'][:-1] if vals['name'].endswith('/') and vals['name'] != '/' else vals['name']
         return super(Repair, self).create(vals)
 
     def button_dummy(self):
@@ -323,7 +327,6 @@ class Repair(models.Model):
                     'partner_shipping_id': repair.address_id.id,
                     'currency_id': currency.id,
                     'narration': narration,
-                    'line_ids': [],
                     'invoice_origin': repair.name,
                     'repair_ids': [(4, repair.id)],
                     'invoice_line_ids': [],
@@ -574,7 +577,7 @@ class RepairLine(models.Model):
         index=True, ondelete='cascade')
     type = fields.Selection([
         ('add', 'Add'),
-        ('remove', 'Remove')], 'Type', required=True)
+        ('remove', 'Remove')], 'Type', default='add', required=True)
     product_id = fields.Many2one('product.product', 'Product', required=True)
     invoiced = fields.Boolean('Invoiced', copy=False, readonly=True)
     price_unit = fields.Float('Unit Price', required=True, digits='Product Price')
@@ -669,7 +672,8 @@ class RepairLine(models.Model):
                     # Check automatic detection
                     fp_id = self.env['account.fiscal.position'].get_fiscal_position(partner.id, delivery_id=self.repair_id.address_id.id)
                     fp = self.env['account.fiscal.position'].browse(fp_id)
-                self.tax_id = fp.map_tax(self.product_id.taxes_id, self.product_id, partner).ids
+                taxes = self.product_id.taxes_id.filtered(lambda x: x.company_id == self.repair_id.company_id)
+                self.tax_id = fp.map_tax(taxes, self.product_id, partner).ids
             warning = False
             if not pricelist:
                 warning = {
@@ -736,7 +740,8 @@ class RepairFee(models.Model):
                 # Check automatic detection
                 fp_id = self.env['account.fiscal.position'].get_fiscal_position(partner.id, delivery_id=self.repair_id.address_id.id)
                 fp = self.env['account.fiscal.position'].browse(fp_id)
-            self.tax_id = fp.map_tax(self.product_id.taxes_id, self.product_id, partner).ids
+            taxes = self.product_id.taxes_id.filtered(lambda x: x.company_id == self.repair_id.company_id)
+            self.tax_id = fp.map_tax(taxes, self.product_id, partner).ids
         if self.product_id:
             if partner:
                 self.name = self.product_id.with_context(lang=partner.lang).display_name

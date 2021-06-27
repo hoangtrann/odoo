@@ -347,6 +347,7 @@ class MrpProduction(models.Model):
                 if (
                     production.bom_id.consumption == 'flexible'
                     and float_compare(production.qty_produced, production.product_qty, precision_rounding=production.product_uom_id.rounding) == -1
+                    and production.state != 'done'
                 ):
                     production.state = 'progress'
                 else:
@@ -658,6 +659,7 @@ class MrpProduction(models.Model):
                 return self.env['stock.move'], old_qty, quantity
         else:
             move_values = self._get_move_raw_values(bom_line, line_data)
+            move_values['state'] = 'confirmed'
             move = self.env['stock.move'].create(move_values)
             return move, 0, quantity
 
@@ -820,7 +822,6 @@ class MrpProduction(models.Model):
 
         # Initial qty producing
         quantity = max(self.product_qty - sum(self.move_finished_ids.filtered(lambda move: move.product_id == self.product_id).mapped('quantity_done')), 0)
-        quantity = self.product_id.uom_id._compute_quantity(quantity, self.product_uom_id)
         if self.product_id.tracking == 'serial':
             quantity = 1.0
 
@@ -942,6 +943,9 @@ class MrpProduction(models.Model):
                         + "You must complete the work orders before posting the inventory."
                     )
                 )
+
+            if not any(order.move_raw_ids.mapped('quantity_done')):
+                raise UserError(_("You must indicate a non-zero amount consumed for at least one of your components"))
 
             moves_not_to_do = order.move_raw_ids.filtered(lambda x: x.state == 'done')
             moves_to_do = order.move_raw_ids.filtered(lambda x: x.state not in ('done', 'cancel'))
@@ -1087,11 +1091,14 @@ class MrpProduction(models.Model):
 
     def _prepare_workorder_vals(self, operation, workorders, quantity):
         self.ensure_one()
+        todo_uom = self.product_uom_id.id
+        if self.product_id.tracking == 'serial' and self.product_uom_id.uom_type != 'reference':
+            todo_uom = self.env['uom.uom'].search([('category_id', '=', self.product_uom_id.category_id.id), ('uom_type', '=', 'reference')]).id
         return {
             'name': operation.name,
             'production_id': self.id,
             'workcenter_id': operation.workcenter_id.id,
-            'product_uom_id': self.product_id.uom_id.id,
+            'product_uom_id': todo_uom,
             'operation_id': operation.id,
             'state': len(workorders) == 0 and 'ready' or 'pending',
             'qty_producing': quantity,
