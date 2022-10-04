@@ -7,6 +7,7 @@
 # Fred Gilson <fgi@odoo.com>, 2019
 # Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>, 2019
 # Henri Cornuau <hcornuau@gmail.com>, 2019
+# Léonie Bouchat <lbo@odoo.com>, 2019
 # e34d4dcb8e697b071167e94624cfbccb, 2019
 # Micky Jault <micky037@hotmail.fr>, 2019
 # Valaeys Stéphane <svalaeys@fiefmanage.ch>, 2019
@@ -27,7 +28,6 @@
 # Lionel Sausin <ls@numerigraphe.com>, 2019
 # nle_odoo, 2019
 # lucasdeliege <deliegelucas@gmail.com>, 2019
-# Léonie Bouchat <lbo@odoo.com>, 2019
 # f477e7ae9c75a2428d6113663a8354fe_bcd021c <0ff4ce060a36f446722508a48e99c22a_347081>, 2019
 # Alain van de Werve <avw@openerp.com>, 2019
 # Nathan Grognet <ngr@odoo.com>, 2019
@@ -63,7 +63,6 @@
 # Jonathan Quique <jqu@odoo.com>, 2020
 # Pauline Thiry <pth@odoo.com>, 2020
 # Christelle Pinchart <cpi@odoo.com>, 2020
-# Vallen Delobel <edv@odoo.com>, 2020
 # Julien Goergen <jgo@odoo.com>, 2020
 # 44fd1b7fd1ad5b321e37d151521961ad, 2020
 # Martin Trigaux, 2020
@@ -71,8 +70,13 @@
 # Vincent Luba <vincent@biz-4-africa.com>, 2020
 # Priscilla (prs) Odoo <prs@odoo.com>, 2020
 # Fabrice Henrion, 2020
-# Alexandra Jubert <aju@odoo.com>, 2021
-# Cécile Collart <cco@odoo.com>, 2021
+# Alexandra Jubert, 2021
+# Vallen Delobel <edv@odoo.com>, 2021
+# Camille Dantinne <cmd@odoo.com>, 2021
+# SAKodoo <sak@odoo.com>, 2021
+# Antoine Dupuis (andu), 2022
+# Thomas Charpentier, 2022
+# Cécile Collart <cco@odoo.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -80,13 +84,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 15:12+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Cécile Collart <cco@odoo.com>, 2021\n"
+"Last-Translator: Cécile Collart <cco@odoo.com>, 2022\n"
 "Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_cn_small_business
@@ -668,6 +672,11 @@ msgid ""
 "        Contains Balance Sheet, Profit/Loss reports\n"
 "    "
 msgstr ""
+"\n"
+"        Rapports de comptabilité pour la Lituanie\n"
+"\n"
+"       Contient le bilan, les rapports de profits/pertes\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_nl_reports
@@ -856,6 +865,17 @@ msgid ""
 "        * Account Tags.\n"
 "    "
 msgstr ""
+"\n"
+"  Modèle de plan comptable (COA) pour la comptabilité de la Lituanie.\n"
+"\n"
+"        Ce module comprend également :\n"
+"\n"
+"* Liste des banques disponibles en Lituanie.\n"
+"* Groupes d'imposition.\n"
+"* Les impôts lituaniens les plus courants.\n"
+"* Positions fiscales.\n"
+"* Balises de compte.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_helpdesk_fsm
@@ -1496,6 +1516,11 @@ msgid ""
 "    Necessary master data is also included.\n"
 "    "
 msgstr ""
+"\n"
+"Le SAF-T norvégien est un format de fichier standard pour l'exportation de divers types de données transactionnelles comptables en utilisant le format XML.\n"
+"La première version du SAF-T Financial est limitée au niveau du grand livre général, y compris les transactions des clients et des fournisseurs.\n"
+"Les données de base nécessaires sont également incluses.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_payment_payumoney
@@ -1978,6 +2003,44 @@ msgid ""
 "\n"
 "This module is compatible with base_vat module in order to be able to validate VAT numbers for each country that have or not have the possibility to manage multiple identification types.\n"
 msgstr ""
+"\n"
+"Ajoutez un nouveau modèle nommé \"Type d'identification\" qui étend la fonctionnalité de champ de TVA dans le partenaire et permet à l'utilisateur d'identifier (et éventuellement de facturer) les contacts non seulement avec leur numéro d'identification fiscale (TVA) mais avec d'autres types d'identifications comme le document national , passeport, carte d'identité étrangère, etc. Avec ce module installé, vous verrez maintenant dans la vue du formulaire partenaire deux champs :\n"
+"\n"
+"* Type d'identification\n"
+"* Numéro d'identification\n"
+"\n"
+"Ce comportement est une exigence courante pour certains pays d'Amérique Latine comme l'Argentine et le Chili. Si votre localisation a ces exigences, vous devez dépendre de ce module et définir dans votre module de localisation les types d'identifications qui sont utilisés dans votre pays. Généralement, ces types d'identifications sont définis par les autorités gouvernementales qui réglementent les opérations fiscales. Par exemple:\n"
+"\n"
+"* L'AFIP en Argentine définit le DNI, le CUIT (TVA pour les personnes morales), le CUIL (TVA pour les personnes physiques) et 80 autres types d'identification valides.\n"
+"\n"
+"Chaque identification contient ces informations :\n"
+"\n"
+"* nom : nom abrégé de l'identification\n"
+"* description : peut être le même nom court ou un nom long\n"
+"* country_id : le pays auquel appartient cette identification\n"
+"* is_vat : identifiez cet enregistrement comme la TVA correspondante pour le pays spécifique.\n"
+"* séquence : trions les types d'identification en fonction de ceux qui sont les plus utilisés.\n"
+"* actif : nous pouvons activer/désactiver les identifications pour faciliter la tâche à nos clients\n"
+"\n"
+"Afin de rendre ce module compatible pour les environnements multi-entreprises où nous avons des entreprises qui n'ont pas besoin/supportent cette exigence, nous avons ajouté des types d'identification génériques et des règles génériques pour gérer les informations de contact et les rendre transparentes pour l'utilisateur lorsqu'il n'utilise que le La TVA telle que nous la connaissions autrefois.\n"
+"\n"
+"Identifications génériques :\n"
+"\n"
+"* TVA : l'identification fiscale ou le numéro de TVA, par défaut, sera sélectionné comme type d'identification, de sorte que l'utilisateur n'aura qu'à ajouter le numéro de TVA correspondant.\n"
+"* Passeport\n"
+"* Carte d'identité étrangère (document national étranger)\n"
+"\n"
+"Règles lors de la création d'un nouveau partenaire : Nous ne verrons que les types d'identification qui ont du sens en tenant compte de ces règles :\n"
+"\n"
+"* Si le partenaire n'a pas défini d'adresse de pays : affichera les types d'identification génériques ainsi que ceux définis dans le pays de l'entreprise associée du partenaire (si le partenaire n'a pas d'entreprise spécifique, les types d'identification liés à l'entreprise utilisatrice actuelle seront affichés)\n"
+"\n"
+"* Si le partenaire a une adresse pays : affichera les types d'identification génériques plus ceux définis pour le pays du partenaire.\n"
+"\n"
+"Lors de la création d'une nouvelle entreprise, définira toujours pour le partenaire associé le type d'identification is_vat du pays associé.\n"
+"\n"
+"Tous les types d'identification définis peuvent être consultés et activés/désactivés dans le menu \"Contacts / Configuration / Type d'identification\".\n"
+"\n"
+"Ce module est compatible avec le module base_vat afin de pouvoir valider les numéros de TVA pour chaque pays ayant ou non la possibilité de gérer plusieurs types d'identification.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_sale_delivery
@@ -2688,6 +2751,24 @@ msgid ""
 "No modified version is certified and supported by Odoo SA.\n"
 "    "
 msgstr ""
+"\n"
+"Caisse Enregistreuse Belge Certifiée\n"
+"================================\n"
+"\n"
+"Ce module transforme le module Point de Vente en une caisse enregistreuse belge certifiée.\n"
+"\n"
+"Plus d'informations:\n"
+"* http://www.systemedecaisseenregistreuse.be/\n"
+"* http://www.geregistreerdkassasysteem.be/\n"
+"\n"
+"Juridique\n"
+"-----\n"
+"**L'utilisation des sources pos_blackbox_be est uniquement certifiée sur la plateforme SaaS odoo.com\n"
+"pour la version 13.0.** Contactez Odoo SA avant d'installer le module pos_blackbox_be.\n"
+"\n"
+"Une version obfusquée et certifiée de pos_blackbox_be peut être fournie sur\n"
+"demandes d'installations sur site.\n"
+"Aucune version modifiée n'est certifiée et supportée par Odoo SA."
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_bo
@@ -3730,6 +3811,24 @@ msgid ""
 "* create the data of the document types that exists for the specific country. The document type has a country field\n"
 "\n"
 msgstr ""
+"\n"
+"Fonctionnel\n"
+"----------\n"
+"\n"
+"Dans certains pays d'Amérique latine, dont l'Argentine et le Chili, certaines transactions comptables telles que les factures et les factures des fournisseurs sont classées selon des types de documents définis par les autorités fiscales gouvernementales (en Argentine, le cas AFIP, au Chili, le cas SII).\n"
+"\n"
+"Ce module est destiné à être étendu par des localisations afin de gérer ces types de documents et est une information essentielle qui doit être affichée dans les rapports imprimés et qui doit être facilement identifiée, dans l'ensemble des factures ainsi que des mouvements de compte.\n"
+"\n"
+"Chaque type de document a ses propres règles et numéro de séquence, ce dernier est intégré au numéro de facture et à la séquence du journal afin d'être facile pour l'utilisateur de la localisation. Afin de prendre en charge ou non ce type de document, un journal a une nouvelle option qui permet d'utiliser ou non le document..\n"
+"\n"
+"Technique\n"
+"---------\n"
+"\n"
+"Si votre localisation a besoin de cette logique, vous devrez alors ajouter ce module en tant que dépendance et dans votre module de localisation étendre :\n"
+"\n"
+"* étendre la méthode _localization_use_documents() de l'entreprise.\n"
+"* créer les données des types de documents qui existent pour le pays spécifique. Le type de document a un champ de pays\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ar
@@ -4105,6 +4204,12 @@ msgid ""
 "The wizard used is similar as the one for the credit note.\n"
 "    "
 msgstr ""
+"\n"
+"Dans de nombreux pays, une note de débit est utilisée pour augmenter le montant d'une facture existante \n"
+"ou dans certains cas spécifiques pour annuler une note de crédit. \n"
+"C'est comme une facture ordinaire, mais nous devons garder la trace du lien avec la facture originale.  \n"
+"L'assistant utilisé est similaire à celui de la note de crédit.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_cn
@@ -5822,6 +5927,11 @@ msgid ""
 "speakers..\n"
 "        "
 msgstr ""
+"\n"
+"Marketing par SMS sur les intervenants des sessions événementielles\n"
+"=====================================\n"
+"\n"
+"Module passerelle ajoutant des exigences UX pour faciliter le marketing par SMS sur les intervenants des sessions événementielles."
 
 #. module: base
 #: model:ir.module.module,description:base.module_sale_subscription_dashboard
@@ -5993,6 +6103,14 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"\n"
+"Plan comptable et localisation pour Singapour.\n"
+"================================================= =====\n"
+"\n"
+"Ce module ajoute, pour la comptabilité :\n"
+"- Le plan comptable de Singapour\n"
+"- Champ UEN (Unique Entity Number) sur l'entreprise et le partenaire\n"
+"- Champ PermitNo et PermitNoDate sur la facture"
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_skills
@@ -7751,6 +7869,10 @@ msgid ""
 "It will install the e-learning, survey and e-commerce apps and make a complete\n"
 "certification flow including purchase, certification, failure and success.\n"
 msgstr ""
+"\n"
+"Ce module testera le flux principal de certification d'Odoo.\n"
+"Il installera les applications eLearning, Sondage et de eCommerce et créera un flux de certification complet\n"
+" comprenant l'achat, la certification, l'échec et la réussite.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_main_flows
@@ -7980,25 +8102,25 @@ msgstr ""
 "Validation du numéro de TVA des tiers.\n"
 "====================================\n"
 "\n"
-"Après installation de ce module, la valeur entrée dans le champs TVA des tiers\n"
-"sera validé pour tous les pays pris en charge. Le pays est déterminé à\n"
+"Après installation de ce module, la valeur entrée dans le champ TVA des tiers\n"
+"sera validée pour tous les pays pris en charge. Le pays est déterminé à\n"
 "partir du préfixe du code TVA. Par exemple « BE0477472701 » sera validé en \n"
 "utilisant les règles belges.\n"
 "\n"
 "Il y a deux niveaux de validation du numéro de TVA :\n"
 "-------------------------------------------------------------------------------------\n"
 "    * par défaut, une simple vérification hors-ligne est faite en réalisant les règles de validation\n"
-"       connue pour le pays, en général au moyen d'un chiffre de contrôle. Ceci est rapide et \n"
+"       connues pour le pays, en général au moyen d'un chiffre de contrôle. Ceci est rapide et \n"
 "       toujours disponible, mais ne détecte pas les numéros qui ne sont peut-être pas \n"
 "       alloués ou plus valides.\n"
 "\n"
 "    * Lorsque l'option \"Validation du numéro TVA par VIES\" est cochée (dans la configuration  \n"
-"       de la société de l'utilisateur), le numéro de TVA est soumis en-ligne à la base de donnée \n"
+"       de la société de l'utilisateur), le numéro de TVA est soumis en ligne à la base de donnée \n"
 "       européenne VIES, laquelle vérifiera si le numéro est réellement valide et actuellement  \n"
 "       alloué à une compagnie européenne. Ceci est un peu plus lent qu'une simple vérification  \n"
 "       hors-ligne, requiert une connexion internet et n'est peut-être pas disponible tout le temps. \n"
 "       Si le service n'est pas disponible ou ne prend pas en charge le pays concerné (cas des pays hors Union \n"
-"       Européenne), la vérification simple sera réalisé à la place.\n"
+"       Européenne), la vérification simple sera réalisée à la place.\n"
 "\n"
 "Les pays pris en charge actuellement son ceux de l'Union Européenne et quelques autres\n"
 "tels que le Chili, la Colombie, le Mexique, la Norvège ou la Russie. Pour les pays non pris en charge, seul le code\n"
@@ -8213,8 +8335,8 @@ msgid ""
 " another model requires the record being deleted. If possible, archive it "
 "instead."
 msgstr ""
-"un autre modèle nécessite la suppression de l'enregistrement. Si possible, "
-"archivez-le à la place."
+"l'enregistrement que vous tentez de supprimer est requis par un autre "
+"modèle. Si possible, archivez-le plutôt. "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__accesses_count
@@ -8423,7 +8545,7 @@ msgid ""
 "- Delete: another model requires the record being deleted. If possible, archive it instead."
 msgstr ""
 "- Créer / mettre à jour: un champ obligatoire n'est pas défini.\n"
-"- Supprimer: un autre modèle nécessite la suppression de l'enregistrement. Si possible, archivez-le."
+"- Supprimer: l'enregistrement que vous tentez de supprimer est requis par un autre modèle. Si possible, archivez-le."
 
 #. module: base
 #: code:addons/models.py:0
@@ -8705,8 +8827,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base.view_res_users_kanban
 msgid "<i class=\"fa fa-circle\" role=\"img\" aria-label=\"Invalid\" title=\"Invalid\"/>"
 msgstr ""
-"<i class=\"fa fa-circle\" role=\"img\" aria-label=\"Non-valide\" title"
-"=\"Non-valide\"/>"
+"<i class=\"fa fa-circle\" role=\"img\" aria-label=\"Non-valide\" "
+"title=\"Non-valide\"/>"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_res_users_kanban
@@ -9251,7 +9373,7 @@ msgstr "Un module pour tester l'import de traduction."
 #. module: base
 #: model:ir.module.module,description:base.module_test_xlsx_export
 msgid "A module to test xlsx export."
-msgstr ""
+msgstr "Un module pour tester l'export xlsx."
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_assetsbundle
@@ -9996,6 +10118,72 @@ msgid ""
 "         user with the same login (and a blank password), then rename this new\n"
 "         user to a username that does not exist in LDAP, and setup its groups\n"
 msgstr ""
+"Ajoute la prise en charge de l'authentification par serveur LDAP.\n"
+"==============================================\n"
+"Ce module permet aux utilisateurs de se connecter avec leur nom d'utilisateur et leur mot de passe LDAP, et créera \n"
+"automatiquement des utilisateurs Odoo pour eux à la volée.\n"
+"\n"
+"**Remarque :** Ce module ne fonctionne que sur les serveurs sur lesquels le module ``python-ldap`` de Python est installé.\n"
+"\n"
+"Configuration:\n"
+"--------------\n"
+"Après avoir installé ce module, vous devez configurer les paramètres LDAP dans le \n"
+"menu Paramètres généraux. Différentes entreprises peuvent avoir \n"
+"différents serveurs LDAP, tant qu'ils ont des noms d'utilisateur uniques (les noms d'utilisateur doivent être uniques \n"
+"dans Odoo, même dans plusieurs entreprises).\n"
+"\n"
+"La liaison LDAP anonyme est également prise en charge (pour les serveurs LDAP qui le permettent), en \n"
+"gardant simplement l'utilisateur et le mot de passe LDAP vides dans la configuration LDAP. \n"
+"Cela ne permet pas l'authentification anonyme pour les utilisateurs, c'est uniquement pour le compte \n"
+"LDAP principal qui est utilisé pour vérifier si un utilisateur existe avant de tenter de \n"
+"l'authentifier.\n"
+"\n"
+"La sécurisation de la connexion avec STARTTLS est disponible pour les serveurs LDAP qui la prennent en charge, \n"
+"en activant l'option TLS dans la configuration LDAP.\n"
+"\n"
+"Pour plus d'options de configuration des paramètres LDAP, reportez-vous à ldap.conf\n"
+"manpage: manpage:`ldap.conf(5)`.\n"
+"\n"
+"Considérations de sécurité :\n"
+"------------------------\n"
+"Les mots de passe LDAP des utilisateurs ne sont jamais stockés dans la base de données Odoo, le serveur LDAP\n"
+" est interrogé chaque fois qu'un utilisateur doit être authentifié. Aucune duplication de \n"
+"mot de passe ne se produit et les mots de passe sont gérés à un seul endroit.\n"
+"\n"
+"Odoo ne gère pas les changements de mot de passe dans le LDAP, donc tout changement de mot de passe\n"
+" doit être effectué par d'autres moyens directement dans l'annuaire LDAP (pour les utilisateurs LDAP).\n"
+"\n"
+"Il est également possible d'avoir des utilisateurs Odoo locaux dans la base de données avec \n"
+"des utilisateurs authentifiés LDAP (le compte administrateur en est un exemple évident).\n"
+"\n"
+"Voici comment cela fonctionne :\n"
+"---------------------\n"
+"* Le système tente d'abord d'authentifier les utilisateurs par rapport à la base de données \n"
+"Odoo locale ;\n"
+"* si cette authentification échoue (par exemple parce que l'utilisateur n'a pas de\n"
+"mot de passe), le système tente alors de s'authentifier auprès de LDAP ;\n"
+"\n"
+"Comme les utilisateurs LDAP ont des mots de passe vierges par défaut dans la base de données Odoo locale \n"
+"(ce qui signifie aucun accès), la première étape échoue toujours et le serveur LDAP est \n"
+"interrogé pour effectuer l'authentification.\n"
+"\n"
+"L'activation de STARTTLS garantit que la requête d'authentification au serveur LDAP est \n"
+"cryptée.\n"
+"\n"
+"Modèle utilisateur :\n"
+"--------------\n"
+"Dans la configuration LDAP sur les Paramètres généraux, il est possible de sélectionner un *Modèle \n"
+"utilisateur*. S'il est défini, cet utilisateur sera utilisé comme modèle pour créer les utilisateurs \n"
+"locaux chaque fois que quelqu'un s'authentifiera pour la première fois via l'authentification LDAP. Cela \n"
+"permet de prérégler les groupes et les menus par défaut des nouveaux utilisateurs.\n"
+"\n"
+"**Avertissement :** si vous définissez un mot de passe pour le modèle d'utilisateur, ce mot de passe sera \n"
+"attribué comme mot de passe local pour chaque nouvel utilisateur LDAP, définissant ainsi \n"
+"un *mot de passe principal* pour ces utilisateurs (jusqu'à ce qu'il soit modifié manuellement). Vous \n"
+"ne voulez généralement pas cela. Un moyen simple de configurer un utilisateur modèle est de \n"
+"se connecter une fois avec un utilisateur LDAP valide, de laisser Odoo créer un utilisateur local vierge \n"
+"avec le même identifiant (et un mot de passe vide), puis de renommer ce nouvel \n"
+"utilisateur avec un nom d'utilisateur qui n'existe pas dans LDAP , et configurez ses groupes\n"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_administration
@@ -10129,7 +10317,7 @@ msgstr "Algérie"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_dz
 msgid "Algeria - Accounting"
-msgstr ""
+msgstr "Comptabilité - Algérie"
 
 #. module: base
 #: model:ir.module.module,description:base.module_payment_alipay
@@ -10569,12 +10757,12 @@ msgstr "Comptabilité Argentine"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_ar_reports
 msgid "Argentinian Accounting Reports"
-msgstr ""
+msgstr "Rapports comptables argentins"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_ar_edi
 msgid "Argentinian Electronic Invoicing"
-msgstr ""
+msgstr "Facturation électronique argentine"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_client__params
@@ -10773,6 +10961,8 @@ msgid ""
 "Automatically finds the purchase order linked to a vendor bill when using "
 "invoice extraction"
 msgstr ""
+"Recherche automatique de l'ordre d'achat lié à une facture fournisseur lors "
+"de l'extraction de factures."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_translation__state
@@ -11607,6 +11797,7 @@ msgstr ""
 #, python-format
 msgid "Cannot deactivate a language that is currently used by contacts."
 msgstr ""
+"Impossible de désactiver une langue actuellement utilisée par les contacts."
 
 #. module: base
 #: code:addons/base/models/res_lang.py:0
@@ -12408,7 +12599,7 @@ msgstr "Construction"
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_8
 msgid "Consulting Services"
-msgstr ""
+msgstr "Services de consultance"
 
 #. module: base
 #: model:ir.model,name:base.model_res_partner
@@ -13339,7 +13530,7 @@ msgstr "Jours"
 #: model:ir.module.module,shortdesc:base.module_account_debit_note
 #: model:ir.module.module,summary:base.module_account_debit_note
 msgid "Debit Notes"
-msgstr ""
+msgstr "Notes de débit"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server__smtp_debug
@@ -13588,7 +13779,7 @@ msgstr "Concevoir, envoyer et suivre des e-mails"
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_14
 msgid "Desk Manufacturers"
-msgstr ""
+msgstr "Fabricants de bureaux"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__dst_partner_id
@@ -14085,6 +14276,8 @@ msgstr ""
 #: model:ir.module.module,summary:base.module_l10n_be_edi
 msgid "E-Invoicing, Universal Business Language (UBL 2.0), e-fff protocol"
 msgstr ""
+"Facturation électronique, Universal Business Language (UBL 2.0), protocole "
+"e-fff"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_edi
@@ -15261,7 +15454,7 @@ msgstr "Historique du Parc Automobile"
 #. module: base
 #: model:ir.module.module,summary:base.module_documents_fleet
 msgid "Fleet from documents"
-msgstr ""
+msgstr "Parc Automobile à partir des documents"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_property__type__float
@@ -16308,6 +16501,8 @@ msgid ""
 "Helps you manage your mass mailing to design\n"
 "professional emails and reuse templates."
 msgstr ""
+"Vous aide à gérer vos envois en masse pour concevoir\n"
+"des emails professionnels et réutiliser des modèles."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_human_resources_payroll
@@ -17076,7 +17271,7 @@ msgstr "Indonésie"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_id_efaktur
 msgid "Indonesia E-faktur"
-msgstr ""
+msgstr "Indonesia E-faktur"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_id
@@ -17243,7 +17438,7 @@ msgstr "Intégrer le mécanisme de coupon avec les coûts d'expédition."
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_six
 msgid "Integrate your POS with a Six payment terminal"
-msgstr ""
+msgstr "Intégrez votre PdV avec un terminal de paiement Six"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_adyen
@@ -17397,6 +17592,12 @@ msgstr "Clé invalide: La vue QWeb devrait avoir une clé"
 #, python-format
 msgid "Invalid model name %r in action definition."
 msgstr "Nom de modèle %r non valide dans la définition de l'action."
+
+#. module: base
+#: code:addons/base/models/ir_actions.py:611
+#, python-format
+msgid "many2many fields cannot be evaluated by reference"
+msgstr ""
 
 #. module: base
 #: code:addons/template_inheritance.py:0
@@ -17739,17 +17940,17 @@ msgstr "Document LATAM"
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_latam_invoice_document
 msgid "LATAM Document Types"
-msgstr ""
+msgstr "Types de documents LATAM"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_latam_base
 msgid "LATAM Identification Types"
-msgstr ""
+msgstr "Types d'identification LATAM"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_latam_base
 msgid "LATAM Localization Base"
-msgstr ""
+msgstr "Base de la localisation LATAM"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__license__lgpl-3
@@ -17759,7 +17960,7 @@ msgstr "LGPL Version 3"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_lt_reports
 msgid "LT - Accounting Reports"
-msgstr ""
+msgstr "LT - Rapports comptables"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_stock_landed_costs
@@ -18991,7 +19192,7 @@ msgstr "Emails de masse auprès des pistes / opportunités"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_sale
 msgid "Mass mailing on sale orders"
-msgstr ""
+msgstr "Envoi massif de courrier sur les commandes de vente"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_event_track
@@ -19119,8 +19320,8 @@ msgid ""
 "Methods that start with `get_default_` are deprecated. Override `get_values`"
 " instead(Method %s)"
 msgstr ""
-"Les méthodes commençant par « get_default_ » sont obsolètes. Utilisez « "
-"get_values » à la place (méthode %s)"
+"Les méthodes commençant par « get_default_ » sont obsolètes. Utilisez "
+"« get_values » à la place (méthode %s)"
 
 #. module: base
 #: code:addons/base/models/res_config.py:0
@@ -19677,7 +19878,7 @@ msgstr "NIT"
 #. module: base
 #: model:res.country,vat_label:base.id
 msgid "NPWP"
-msgstr ""
+msgstr "NPWP"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_name
@@ -19988,7 +20189,7 @@ msgstr "Comptabilité - Norvège"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_no_saft
 msgid "Norwegian Standard Audit File for Tax"
-msgstr ""
+msgstr "Fichier d'audit standard norvégien pour les impôts"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__state__uninstalled
@@ -22116,6 +22317,10 @@ msgid ""
 "\n"
 "Please exclude them from the selection to continue. It's possible to still retrieve those PDFs by selecting each of the affected records individually, which will avoid merging."
 msgstr ""
+"Odoo n'est pas en mesure de fusionner les PDF attachés aux enregistrements suivants :\n"
+"%s\n"
+"\n"
+"Veuillez les exclure de la sélection pour continuer. Il est toujours possible de récupérer ces fichiers PDF en sélectionnant chacun des enregistrements concernés individuellement, ce qui évitera la fusion."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_odoo_referral
@@ -22210,6 +22415,9 @@ msgid ""
 "One or more of the selected modules have already been uninstalled, if you "
 "believe this to be an error, you may try again later or contact support."
 msgstr ""
+"Un ou plusieurs des modules sélectionnés ont déjà été désinstallés, si vous "
+"pensez qu'il s'agit d'une erreur, vous pouvez réessayer plus tard ou "
+"contacter le support."
 
 #. module: base
 #: code:addons/base/models/res_partner.py:0
@@ -23875,7 +24083,7 @@ msgstr ""
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_2
 msgid "Prospects"
-msgstr ""
+msgstr "Prospects"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_server__link_field_id
@@ -24577,7 +24785,7 @@ msgstr "Revendeurs"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_partner_commission
 msgid "Resellers Commissions For Subscription"
-msgstr ""
+msgstr "Commissions des revendeurs pour les abonnements"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_reset_view_arch_wizard__reset_mode
@@ -24808,7 +25016,7 @@ msgstr "Marketing par SMS"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_marketing_automation_sms
 msgid "SMS Marketing in Marketing Automation"
-msgstr ""
+msgstr "Marketing par SMS dans Automatisation du Marketing"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sms
@@ -26243,17 +26451,17 @@ msgstr "Suède"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_se_reports
 msgid "Sweden - Accounting Reports"
-msgstr ""
+msgstr "Suède - Rapports comptables"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_se_ocr
 msgid "Sweden - Structured Communication OCR"
-msgstr ""
+msgstr "Suède - Communication Structurée OCR"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_se
 msgid "Swedish - Accounting"
-msgstr ""
+msgstr "Suéde - Comptabilité"
 
 #. module: base
 #: model:res.country,name:base.ch
@@ -26599,7 +26807,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_res_lang__url_code
 msgid "The Lang Code displayed in the URL"
-msgstr ""
+msgstr "Le code Lang affiché dans l'URL"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_lang__grouping
@@ -26831,7 +27039,7 @@ msgstr "L'utilisateur interne en charge de ce contact."
 #: code:addons/base/models/res_country.py:106
 #, python-format
 msgid "The layout contains an invalid format key"
-msgstr ""
+msgstr "La mise en page contient une clé de format non valide"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model__inherited_model_ids
@@ -27145,8 +27353,8 @@ msgid ""
 "The values for the fields '%s' already exist (they are probably '%s' in the "
 "current model)."
 msgstr ""
-"Les valeurs des champs « %s » existent déjà (il s'agit probablement de « %s "
-"» dans le modèle actuel)."
+"Les valeurs des champs « %s » existent déjà (il s'agit probablement de "
+"« %s » dans le modèle actuel)."
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_theme
@@ -27967,7 +28175,7 @@ msgstr "Îles mineures éloignées des États-Unis"
 #. module: base
 #: model:res.country,vat_label:base.at
 msgid "USt"
-msgstr ""
+msgstr "USt"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_utm
@@ -27987,12 +28195,12 @@ msgstr "UTM et courriel de masse sur les bons de commande."
 #. module: base
 #: model:ir.module.module,description:base.module_social_sale
 msgid "UTM and post on sale orders"
-msgstr ""
+msgstr "UTM et post sur les bons de commande"
 
 #. module: base
 #: model:ir.module.module,description:base.module_social_crm
 msgid "UTM and posts on crm"
-msgstr ""
+msgstr "UTM et postes sur CRM"
 
 #. module: base
 #: model:res.country,name:base.ug
@@ -28723,7 +28931,7 @@ msgstr "Mode héritage de Vue"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_crm_livechat
 msgid "View livechat sessions for leads"
-msgstr ""
+msgstr "Voir les sessions de LivChat pour les pistes"
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0

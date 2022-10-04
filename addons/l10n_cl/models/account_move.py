@@ -31,15 +31,15 @@ class AccountMove(models.Model):
             domain = super()._get_l10n_latam_documents_domain()
             document_type_ids = self.journal_id.l10n_cl_sequence_ids.mapped('l10n_latam_document_type_id').ids
             return expression.AND([domain, [('id', 'in', document_type_ids)]])
-        domain = [
-            ('country_id.code', '=', 'CL'),
-            ('internal_type', 'in', ['invoice', 'debit_note', 'credit_note', 'invoice_in'])]
+        domain = [('country_id.code', '=', 'CL')]
+        if self.type in ['in_invoice', 'out_invoice']:
+            domain += [('internal_type', 'in', ['invoice', 'debit_note', 'invoice_in'])]
+        elif self.type in ['in_refund', 'out_refund']:
+            domain += [('internal_type', '=', 'credit_note')]
         if self.partner_id.l10n_cl_sii_taxpayer_type == '1' and self.partner_id_vat != '60805000-0':
             domain += [('code', 'not in', ['39', '70', '71', '914', '911'])]
         elif self.partner_id.l10n_cl_sii_taxpayer_type == '1' and self.partner_id_vat == '60805000-0':
             domain += [('code', 'not in', ['39', '70', '71'])]
-            if self.type == 'in_invoice':
-                domain += [('internal_type', '!=', 'credit_note')]
         elif self.partner_id.l10n_cl_sii_taxpayer_type == '2':
             domain += [('code', 'in', ['70', '71', '56', '61'])]
         elif self.partner_id.l10n_cl_sii_taxpayer_type == '3':
@@ -91,10 +91,6 @@ class AccountMove(models.Model):
                 if tax_payer_type == '4' or country_id != self.env.ref('base.cl'):
                     raise ValidationError(_('You need a journal without the use of documents for foreign '
                                             'suppliers'))
-            if rec.journal_id.type == 'purchase' and not rec.journal_id.l10n_latam_use_documents:
-                if tax_payer_type != '4':
-                    raise ValidationError(_('This supplier should be defined as foreigner tax payer type and '
-                                            'the country should be different from Chile to register purchases.'))
 
     @api.onchange('journal_id')
     def _l10n_cl_onchange_journal(self):

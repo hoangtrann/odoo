@@ -28,9 +28,12 @@
 # Muhammad Syarif <mhdsyarif.ms@gmail.com>, 2020
 # Ryanto The <ry.the77@gmail.com>, 2020
 # Imbar Budiman <imbarbudiman@yahoo.com>, 2021
-# whenwesober <gulmugurzu@yevme.com>, 2021
+# whenwesober, 2021
 # Altela Eleviansyah Pramardhika <altela_pramardhika@yahoo.com>, 2021
 # Daffi Prabowo <hammet217@gmail.com>, 2021
+# Muftiara Syuhada <muftiara.syuhada@gmail.com>, 2021
+# Abdul Munif Hanafi <amunifhanafi@gmail.com>, 2022
+# Abe Manyo, 2022
 # 
 msgid ""
 msgstr ""
@@ -38,7 +41,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 15:12+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Daffi Prabowo <hammet217@gmail.com>, 2021\n"
+"Last-Translator: Abe Manyo, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/odoo/teams/41243/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,6 +86,16 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"\n"
+"\n"
+"Laporan Akuntansi untuk Austria.\n"
+"================================\n"
+"\n"
+"    * Definisikan laporan berikut::\n"
+"        * Laba/Rugi (§ 231 UGB Gesamtkostenverfahren)\n"
+"        * Neraca Keuangan(§ 224 UGB)\n"
+"\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_be_invoice_bba
@@ -131,6 +144,17 @@ msgid ""
 " - Hungarian Bank information\n"
 " "
 msgstr ""
+"\n"
+"\n"
+"Base module untuk lokalisasi Hungaria\n"
+"==========================================\n"
+"\n"
+"Modul ini terdiri dari:\n"
+"\n"
+" - Bagan Akun Umum Hungaria\n"
+" - Pajak Hungaria\n"
+" - Informasi Bank Hungaria\n"
+" "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_dk
@@ -290,6 +314,73 @@ msgid ""
 "11010101 Caja General\n"
 "    "
 msgstr ""
+"\n"
+"\n"
+"Lokalisasi Modul untuk Republik Dominika\n"
+"===========================================\n"
+"\n"
+"Catálogo de Cuentas e Impuestos para República Dominicana, Compatible para\n"
+"**Internacionalización** con **NIIF** y alineado a las normas y regulaciones\n"
+"de la Dirección General de Impuestos Internos (**DGII**).\n"
+"\n"
+"**Este módulo consiste de:**\n"
+"\n"
+"- Catálogo de Cuentas Estándar (alineado a DGII y NIIF)\n"
+"- Catálogo de Impuestos con la mayoría de Impuestos Preconfigurados\n"
+"        - ITBIS para compras y ventas\n"
+"        - Retenciones de ITBIS\n"
+"        - Retenciones de ISR\n"
+"        - Grupos de Impuestos y Retenciones:\n"
+"                - Telecomunicaiones\n"
+"                - Proveedores de Materiales de Construcción\n"
+"                - Personas Físicas Proveedoras de Servicios\n"
+"        - Otros impuestos\n"
+"- Secuencias Preconfiguradas para manejo de todos los NCF\n"
+"        - Facturas con Valor Fiscal (para Ventas)\n"
+"        - Facturas para Consumidores Finales\n"
+"        - Notas de Débito y Crédito\n"
+"        - Registro de Proveedores Informales\n"
+"        - Registro de Ingreso Único\n"
+"        - Registro de Gastos Menores\n"
+"        - Gubernamentales\n"
+"- Posiciones Fiscales para automatización de impuestos y retenciones\n"
+"        - Cambios de Impuestos a Exenciones (Ej. Ventas al Estado)\n"
+"        - Cambios de Impuestos a Retenciones (Ej. Compra Servicios al Exterior)\n"
+"        - Entre otros\n"
+"\n"
+"**Nota:**\n"
+"Esta localización, aunque posee las secuencias para NCF, las mismas no pueden\n"
+"ser utilizadas sin la instalación de módulos de terceros o desarrollo\n"
+"adicional.\n"
+"\n"
+"Estructura de Codificación del Catálogo de Cuentas:\n"
+"===================================================\n"
+"\n"
+"**Un dígito** representa la categoría/tipo de cuenta del del estado financiero.\n"
+"**1** - Activo        **4** - Cuentas de Ingresos y Ganancias\n"
+"**2** - Pasivo        **5** - Costos, Gastos y Pérdidas\n"
+"**3** - Capital       **6** - Cuentas Liquidadoras de Resultados\n"
+"\n"
+"**Dos dígitos** representan los rubros de agrupación:\n"
+"11- Activo Corriente\n"
+"21- Pasivo Corriente\n"
+"31- Capital Contable\n"
+"\n"
+"**Cuatro dígitos** se asignan a las cuentas de mayor: cuentas de primer orden\n"
+"1101- Efectivo y Equivalentes de Efectivo\n"
+"2101- Cuentas y Documentos por pagar\n"
+"3101- Capital Social\n"
+"\n"
+"**Seis dígitos** se asignan a las sub-cuentas: cuentas de segundo orden\n"
+"110101 - Caja\n"
+"210101 - Proveedores locales\n"
+"\n"
+"**Ocho dígitos** son para las cuentas de tercer orden (las visualizadas\n"
+"en Odoo):\n"
+"1101- Efectivo y Equivalentes\n"
+"110101- Caja\n"
+"11010101 Caja General\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_jp
@@ -311,6 +402,22 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"\n"
+"\n"
+"Gambaran Umum:\n"
+"---------\n"
+"\n"
+"* Templat Bagan Akun dan Pajak untuk perusahaan di Jepang.\n"
+"* Ini mungkin tidak mencakup semua akun yang dibutuhkan sebuah perusahaan. Anda diharapkan untuk menambahkan/menghapus/mengubah akun berdasarkan templat ini.\n"
+"\n"
+"Catatan:\n"
+"-----\n"
+"\n"
+"* Posisi fiskal '内税' dan '外税' telah ditambahkan untuk menangani persyaratan khusus yang mungkin timbul dari implementasi POS. [1]  Pada situasi normal, Anda mungkin tidak membutuhkan hal tersebut sama sekali.\n"
+"\n"
+"[1] Lihat https://github.com/odoo/odoo/pull/6470 untuk detail.\n"
+"\n"
+"    "
 
 #. module: base
 #: code:addons/base/models/res_config.py:0
@@ -331,6 +438,9 @@ msgid ""
 "\n"
 "This module adds a custom Sales Team for the Point of Sale. This enables you to view and manage your point of sale sales with more ease.\n"
 msgstr ""
+"\n"
+"\n"
+"Modul ini menambahkan Tim Penjualan kustom untuk Point of Sale. Ini memungkinkan Anda untuk melihat dan mengelola penjualan point of sale Anda dengan lebih gampang.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_restaurant
@@ -343,6 +453,13 @@ msgid ""
 "- Kitchen Order Printing: allows you to print orders updates to kitchen or bar printers\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Modul ini menambahkan beberapa fitur ke Point of Sale yang spesifik untuk manajemen restoran:\n"
+"- Bill Printing: Memungkinkan Anda untuk mencetak resi sebelum pesanan dibayar\n"
+"- Bill Splitting: Memungkinkan Anda untuk memisah pesanan menjadi resi-resi yang berbeda\n"
+"- Kitchen Order Printing: Memungkinkan Anda untuk mencetak update pesanan ke dapur atau printer bar\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_discount
@@ -353,6 +470,11 @@ msgid ""
 "discount to a customer.\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Modul ini memungkinkan kasir untuk dengan cepat memberikan diskon berdasarkan\n"
+"persentase ke pelanggan.\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_loyalty
@@ -364,6 +486,12 @@ msgid ""
 "and get rewards.\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Modul ini memungkinkan Anda untuk mendefinisikan program loyalitas di\n"
+"point of sale, di mana pelanggan mendapatkan poin loyalitas\n"
+"dan hadiah.\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_epson_printer_restaurant
@@ -372,6 +500,9 @@ msgid ""
 "\n"
 "Use Epson Printers as Order Printers in the Point of Sale without the IoT Box\n"
 msgstr ""
+"\n"
+"\n"
+"Gunakan Printer Epson sebagai Printer Pesanan di Point of Sale tanpa menggunakan IoT Box\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_epson_printer
@@ -1570,6 +1701,13 @@ msgid ""
 "For instance when invoicing a training, the training agenda and materials will automatically be sent to your customers.'\n"
 "    "
 msgstr ""
+"\n"
+"Tambahkan templat email ke produk yang akan dikirim pada konfirmasi faktur\n"
+"==================================================================\n"
+"\n"
+"Dengan modul ini, hubungkan produk Anda ke templat untuk mengirim informasi lengkap dan alat ke pelanggan Anda.\n"
+"Contohnya saat memberikan faktur untuk training, agenda training dan bahan-bahan akan secara otomatis dikirim ke pelanggan Anda.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_documents_project
@@ -4224,6 +4362,8 @@ msgid ""
 "\n"
 "Shorten URLs and use them to track clicks and UTMs\n"
 msgstr ""
+"\n"
+"Persingkat URL dan gunakan mereka untuk melacak klik dan UTM\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_google_map
@@ -7815,7 +7955,7 @@ msgstr "Penilaian"
 #: model:ir.module.category,name:base.module_category_human_resources_approvals
 #: model:ir.module.module,shortdesc:base.module_approvals
 msgid "Approvals"
-msgstr ""
+msgstr "Persetujuan"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.open_module_tree
@@ -7918,12 +8058,12 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.am
 msgid "Armenia"
-msgstr ""
+msgstr "Armenia"
 
 #. module: base
 #: model:res.country,name:base.aw
 msgid "Aruba"
-msgstr ""
+msgstr "Aruba"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_appraisal
@@ -8122,7 +8262,7 @@ msgstr "Otomatisasi"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.ir_filters_view_form
 msgid "Available for User"
-msgstr ""
+msgstr "Tersedia untuk Pengguna"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form
@@ -8185,7 +8325,7 @@ msgstr "B1  15  707 x 1000 mm"
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__format__b10
 msgid "B10    16  31 x 44 mm"
-msgstr ""
+msgstr "B10    16  31 x 44 mm"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__format__b2
@@ -8268,7 +8408,7 @@ msgstr "Rekening Bank"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_res_bank_form
 msgid "Bank Address"
-msgstr ""
+msgstr "Alamat Bank"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_bank__bic
@@ -8325,12 +8465,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_barcodes_mobile
 msgid "Barcode in Mobile"
-msgstr ""
+msgstr "Barcode di Ponsel"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_barcodes_mobile
 msgid "Barcode scan in Mobile"
-msgstr ""
+msgstr "Pemindaian barcode di Seluler"
 
 #. module: base
 #: code:addons/base/models/ir_qweb_fields.py:0
@@ -8371,13 +8511,13 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_model__state__base
 msgid "Base Object"
-msgstr ""
+msgstr "Objek Dasar"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_model_fields_form
 #: model_terms:ir.ui.view,arch_db:base.view_model_form
 msgid "Base Properties"
-msgstr ""
+msgstr "Properti Dasar"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view__arch_base
@@ -8397,7 +8537,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_ui_view__mode__primary
 msgid "Base view"
-msgstr ""
+msgstr "Tampilan dasar"
 
 #. module: base
 #: model:ir.actions.server,name:base.autovacuum_job_ir_actions_server
@@ -8409,17 +8549,17 @@ msgstr "Basis: Bersihkan otomatis internal data"
 #. module: base
 #: model:ir.module.module,summary:base.module_web_grid
 msgid "Basic 2D Grid view for odoo"
-msgstr ""
+msgstr "Tampilan Grid 2D dasar untuk odoo"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_cohort
 msgid "Basic Cohort view for odoo"
-msgstr ""
+msgstr "Tampilan Kelompok Dasar untuk odoo"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_quality
 msgid "Basic Feature for Quality"
-msgstr ""
+msgstr "Fitur Dasar untuk Kualitas"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_iap
@@ -8444,7 +8584,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__res_currency__position__before
 msgid "Before Amount"
-msgstr ""
+msgstr "Sebelum Jumlah"
 
 #. module: base
 #: code:addons/base/models/res_users.py:0
@@ -9234,7 +9374,7 @@ msgstr "Tutup"
 #. module: base
 #: model:res.country,name:base.cc
 msgid "Cocos (Keeling) Islands"
-msgstr ""
+msgstr "Cocos (Keeling) Islands"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_translation__type__code
@@ -9654,7 +9794,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_consolidation
 msgid "Consolidation"
-msgstr ""
+msgstr "Konsolidasi"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_constraint__name
@@ -9758,7 +9898,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_filters__context
 msgid "Context"
-msgstr ""
+msgstr "Konteks"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_window__context
@@ -9786,7 +9926,7 @@ msgstr "Kontrak"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module__contributors
 msgid "Contributors"
-msgstr ""
+msgstr "Kontributor"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_quality_control
@@ -10551,7 +10691,7 @@ msgstr "Format Tanggal"
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Date format"
-msgstr ""
+msgstr "Format tanggal"
 
 #. module: base
 #: code:addons/base/models/ir_qweb_fields.py:0
@@ -13801,28 +13941,28 @@ msgstr "Gambar"
 #: model:ir.model.fields,field_description:base.field_res_partner__image_1024
 #: model:ir.model.fields,field_description:base.field_res_users__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Gambar 1024"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_image_mixin__image_128
 #: model:ir.model.fields,field_description:base.field_res_partner__image_128
 #: model:ir.model.fields,field_description:base.field_res_users__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Gambar 128"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_image_mixin__image_256
 #: model:ir.model.fields,field_description:base.field_res_partner__image_256
 #: model:ir.model.fields,field_description:base.field_res_users__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Gambar 256"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_image_mixin__image_512
 #: model:ir.model.fields,field_description:base.field_res_partner__image_512
 #: model:ir.model.fields,field_description:base.field_res_users__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Gambar 512"
 
 #. module: base
 #: model:ir.model,name:base.model_image_mixin
@@ -14041,7 +14181,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.id
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesia"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_id_efaktur
@@ -14357,6 +14497,12 @@ msgstr ""
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "Invalid model name %r in action definition."
+msgstr ""
+
+#. module: base
+#: code:addons/base/models/ir_actions.py:611
+#, python-format
+msgid "many2many fields cannot be evaluated by reference"
 msgstr ""
 
 #. module: base
@@ -15194,7 +15340,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_company_step
 msgid "Let's start!"
-msgstr ""
+msgstr "Ayo mulai!"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__format__letter
@@ -18515,6 +18661,44 @@ msgid ""
 "\n"
 "You can activate a blog for each event allowing you to communicate on specific events. Visitors can subscribe to news to get informed."
 msgstr ""
+"Atur Event, Training & Webinar\n"
+"-------------------------------------\n"
+"\n"
+"### Jadwalkan, Promosikan, Jual, Atur\n"
+"\n"
+"Dapatkan fitur tambahan per event; lebih dari satu halaman, sponsor, beberapa talk, formulir proposal talk, agenda, berita terkait event, dokumen (slide presentasi), menu spesifik event.\n"
+"\n"
+"Atur Progres Anda\n"
+"--------------------\n"
+"\n"
+"### Dari proposal talk sampai ke publikasi\n"
+"\n"
+"Tambahkan formulir proposal talk pada event Anda untuk mengizinkan pengunjung menyarankan talk dan pembicara mereka. Atur proses validasi dari setiap talk, dan dengan mudah jadwalkan semuanya.\n"
+"\n"
+"Integrasi unik frontend dan backend Odoo membuat penyusunan dan publikasi sangat gampang. Dengan mudah buat biografi pembicara dan keterangan talk yang indah.\n"
+"\n"
+"Agenda dan Daftar Talk\n"
+"------------------------\n"
+"\n"
+"### Antarmuka user yang kuat\n"
+"\n"
+"Dapatkan agenda indah untuk setiap event yang secara otomatis dipublikasikan di website Anda. Mungkinkan pengunjung untuk dengan gampang mencari dan membaca talk, filter berdasarkan tag, lokasi atau pembicara.\n"
+"\n"
+"Kelola Sponsor\n"
+"---------------\n"
+"\n"
+"### Jual sponsorship, promosikan sponsor Anda\n"
+"\n"
+"Tambahkan sponsor pada event dan publikasikan sponsor pada setiap tingkat (misalnya perunggu, perak, emas) di bagian bawah setiap halaman event.\n"
+"\n"
+"Jual paket sponsorship online melalui eNiaga Odoo untuk mendapatkan integrasi penuh siklus penjualan.\n"
+"\n"
+"Komunikasi yang Efisien\n"
+"-----------------------\n"
+"\n"
+"### Aktifkan blog untuk event-event tertentu\n"
+"\n"
+"Anda dapat mengaktifkan blog untuk setiap event yang memungkinkan Anda untuk berkomunikasi pada event-event tertentu. Pengunjung dapat subscribe ke berita agar tidak ketinggalan informasi."
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_event
@@ -19431,7 +19615,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_currency_form
 msgid "Price Accuracy"
-msgstr ""
+msgstr "Akurasi Harga"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__primary_color
@@ -19499,12 +19683,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_stock
 msgid "Product Availability"
-msgstr ""
+msgstr "Ketersediaan Produk"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_comparison
 msgid "Product Comparison"
-msgstr ""
+msgstr "Perbandingan Produk"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_product_email_template
@@ -19524,7 +19708,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.category,name:base.module_category_productivity
 msgid "Productivity"
-msgstr ""
+msgstr "Produktifitas"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_product
@@ -19539,7 +19723,7 @@ msgstr "Tanggal Kadaluarsa Produk"
 #. module: base
 #: model:ir.module.module,summary:base.module_documents_product
 msgid "Products from Documents"
-msgstr ""
+msgstr "Produk dari Dokumen"
 
 #. module: base
 #: model:res.partner.title,shortcut:base.res_partner_title_prof
@@ -19849,7 +20033,7 @@ msgstr "Tampilan QWeb"
 #. module: base
 #: model:res.country,name:base.qa
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_form
@@ -21478,7 +21662,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_skills
 msgid "Skills Management"
-msgstr ""
+msgstr "Manajemen Keahlian"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_skills_slides
@@ -22090,7 +22274,7 @@ msgstr ""
 #. module: base
 #: model:ir.model,name:base.model_ir_config_parameter
 msgid "System Parameter"
-msgstr ""
+msgstr "Parameter Sistem"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.ir_config_list_action
@@ -22279,7 +22463,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.ir_mail_server_form
 msgid "Test Connection"
-msgstr ""
+msgstr "Tes Koneksi"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_website_slides_full
@@ -22299,7 +22483,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_performance
 msgid "Test Performance"
-msgstr ""
+msgstr "Tes Performa"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_rpc
@@ -23178,7 +23362,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.tl
 msgid "Timor-Leste"
-msgstr ""
+msgstr "Timor-Leste"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner__title
@@ -23330,7 +23514,7 @@ msgstr "Pelatihan"
 #. module: base
 #: model:ir.module.module,summary:base.module_event
 msgid "Trainings, Conferences, Meetings, Exhibitions, Registrations"
-msgstr ""
+msgstr "Training, Konferensi, Meeting, Exhibition, Pendaftaran"
 
 #. module: base
 #: model:ir.module.module,description:base.module_payment_transfer
@@ -23474,7 +23658,7 @@ msgstr "Selasa"
 #. module: base
 #: model:res.country,name:base.tn
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunisia"
 
 #. module: base
 #: model:res.country,name:base.tr
@@ -23489,7 +23673,7 @@ msgstr "Turki - Akuntansi"
 #. module: base
 #: model:res.country,name:base.tm
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkmenistan"
 
 #. module: base
 #: model:res.country,name:base.tc
@@ -23747,7 +23931,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.us
 msgid "United States"
-msgstr ""
+msgstr "Amerika Serikat"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_us
@@ -23983,7 +24167,7 @@ msgstr ""
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Use the format '%s'"
-msgstr ""
+msgstr "Gunakan format '%s'"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country__vat_label
@@ -24045,7 +24229,7 @@ msgstr "Log Masuk Pengguna"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.user_groups_view
 msgid "User Type"
-msgstr ""
+msgstr "Jenis Pengguna"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__log_ids
@@ -24055,7 +24239,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.category,name:base.module_category_user_type
 msgid "User types"
-msgstr ""
+msgstr "Jenis-jenis Pengguna"
 
 #. module: base
 #: model:ir.model,name:base.model_change_password_user
@@ -24136,7 +24320,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.uz
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Uzbekistan"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_vat

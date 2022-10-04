@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import ast
-import collections
+import collections.abc
 import imp
 import importlib
 import inspect
@@ -368,7 +368,7 @@ def load_information_from_description_file(module, mod_path=None):
         # auto_install: [] to always auto_install a module regardless of its
         # dependencies
         auto_install = info.get('auto_install', info.get('active', False))
-        if isinstance(auto_install, collections.Iterable):
+        if isinstance(auto_install, collections.abc.Iterable):
             info['auto_install'] = set(auto_install)
             non_dependencies = info['auto_install'].difference(info['depends'])
             assert not non_dependencies,\
@@ -528,6 +528,8 @@ class OdooTestResult(unittest.result.TestResult):
             logger.handle(record)
 
     def getDescription(self, test):
+        if isinstance(test, unittest.case._SubTest):
+            return 'Subtest %s.%s %s' % (test.test_case.__class__.__qualname__, test.test_case._testMethodName, test._subDescription())
         if isinstance(test, unittest.TestCase):
             # since we have the module name in the logger, this will avoid to duplicate module info in log line
             # we only apply this for TestCase since we can receive error handler or other special case

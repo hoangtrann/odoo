@@ -10,8 +10,8 @@
 # Michal Veselý <michal@veselyberanek.net>, 2020
 # Damian Brencic <brencicdamian12313@gmail.com>, 2020
 # karolína schusterová <karolina.schusterova@vdp.sk>, 2021
-# trendspotter, 2021
 # Rastislav Brencic <rastislav.brencic@azet.sk>, 2021
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 15:12+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Rastislav Brencic <rastislav.brencic@azet.sk>, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/odoo/teams/41243/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1321,7 +1321,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"Ganttův pohled na ovládací panel Time Off"
+"Ganttův pohled na ovládací panel volné dny"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_lock
@@ -10089,7 +10089,7 @@ msgstr "Vše, co potřebujete k finanční konsolidaci"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_holidays
 msgid "Allocate time off and follow time off requests"
-msgstr "Přidělte volno a sledujte žádosti o volno"
+msgstr "Přidělte volné dny a sledujte žádosti o volné dny"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_reprint
@@ -13884,7 +13884,7 @@ msgstr "Dokumenty - podpisy"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_documents_hr_holidays
 msgid "Documents - Time Off"
-msgstr "Dokumenty - Volno"
+msgstr "Dokumenty - volné dny"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_filters__domain
@@ -17211,6 +17211,12 @@ msgstr "Neplatný klíč: pohled QWeb by měl mít klíč"
 #, python-format
 msgid "Invalid model name %r in action definition."
 msgstr "Neplatný název modelu% r v definici akce."
+
+#. module: base
+#: code:addons/base/models/ir_actions.py:611
+#, python-format
+msgid "many2many fields cannot be evaluated by reference"
+msgstr ""
 
 #. module: base
 #: code:addons/template_inheritance.py:0
@@ -24492,7 +24498,7 @@ msgstr "Naplánujte schůzky zaměstnanců"
 #. module: base
 #: model:ir.module.module,summary:base.module_project_timesheet_holidays
 msgid "Schedule timesheet when on time off"
-msgstr "Naplánujte si pracovní výkazy, když máte volno"
+msgstr "Naplánujte si pracovní výkazy, když máte volné dny"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_actions_server__usage__ir_cron
@@ -25452,7 +25458,7 @@ msgstr "Ukládejte výplatní pásky zaměstnanců v aplikaci dokumentů"
 #. module: base
 #: model:ir.module.module,summary:base.module_documents_hr_holidays
 msgid "Store employee's time off documents  in the Document app"
-msgstr ""
+msgstr "Uložte dokumenty o volných dní zaměstnance v aplikaci dokumenty"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__store
@@ -26803,7 +26809,7 @@ msgstr "Volné dny"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_holidays_calendar
 msgid "Time Off - Calendar"
-msgstr ""
+msgstr "Volné dny - kalendár"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_holidays_gantt
@@ -26813,7 +26819,7 @@ msgstr "Volné dny gantový pohled"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_holidays_gantt_calendar
 msgid "Time off Gantt - Calendar"
-msgstr ""
+msgstr "Volné dny Gantt - kalendár"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_timesheet_grid
@@ -28178,6 +28184,9 @@ msgid ""
 " <br> <br>\n"
 "At Lumber Inc we bring operational experience combined with technological acumen. We understand that any software that supports business operations needs to be designed in such a way that facilitates the execution of critical operational processes, and serves as a tool to the users rather than a barrier. Our approach is focused on the process first, ensuring that it contributes to the goals of the company, we then optimize it, and design the software solutions to best support it."
 msgstr ""
+"Jsme technologická konzultační &amp; strategická poradenská firma, která vytváří řešení zvyšující hodnotu pomocí pokročilého softwaru pro naše klienty po celém světě.\n"
+" <br> <br>\n"
+"Ve společnosti Lumber Inc. přinášíme provozní zkušenosti v kombinaci s technologickým důvtipem. Chápeme, že jakýkoli software, který podporuje obchodní operace, musí být navržen tak, aby usnadňoval provádění kritických provozních procesů a sloužil uživatelům jako nástroj, nikoli jako překážka. Náš přístup se nejprve zaměřuje na proces a zajišťuje, aby přispíval k plnění cílů společnosti, poté jej optimalizujeme a navrhujeme softwarová řešení, která jej co nejlépe podporují."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web

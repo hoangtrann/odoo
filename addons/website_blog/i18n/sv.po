@@ -10,9 +10,13 @@
 # Chrille Hedberg <hedberg.chrille@gmail.com>, 2019
 # Kristoffer Grundström <lovaren@gmail.com>, 2019
 # Martin Trigaux, 2019
-# Kim Asplund <kim.asplund@gmail.com>, 2020
 # Anto Nilsson <anton.nilsson@vertel.se>, 2020
 # Anders Wallenquist <anders.wallenquist@vertel.se>, 2021
+# Simon S, 2021
+# 3eec91a23d05c632ffac786ac42b81b8_b6fff7b <8985b7bc57db860af29969457dbb51b3_1018915>, 2021
+# Kim Asplund <kim.asplund@gmail.com>, 2021
+# Mikael Åkerberg <mikael.akerberg@mariaakerberg.com>, 2022
+# Jakob Krabbe <jakob.krabbe@vertel.se>, 2022
 # 
 msgid ""
 msgstr ""
@@ -20,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 12:34+0000\n"
 "PO-Revision-Date: 2019-08-26 09:15+0000\n"
-"Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>, 2021\n"
+"Last-Translator: Jakob Krabbe <jakob.krabbe@vertel.se>, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/odoo/teams/41243/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +50,7 @@ msgstr ""
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.date_selector
 msgid "-- All dates"
-msgstr ""
+msgstr "-- Alla datum"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.s_latest_posts_options
@@ -297,7 +301,7 @@ msgstr ""
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.posts_loop
 msgid "<span class=\"mr-1\">Show:</span>"
-msgstr ""
+msgstr "<span class=\"mr-1\">Visa:</span>"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.blogs_nav
@@ -307,7 +311,7 @@ msgstr ""
 #. module: website_blog
 #: model:blog.post,subtitle:website_blog.blog_post_2
 msgid "A great way to discover hidden places"
-msgstr ""
+msgstr "Ett bra sätt att upptäcka gömda platser"
 
 #. module: website_blog
 #: model_terms:blog.post,content:website_blog.blog_post_1
@@ -377,7 +381,7 @@ msgstr "Alla"
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.post_breadcrumbs
 msgid "All Blogs"
-msgstr ""
+msgstr "Alla bloggar"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.s_latest_posts_options
@@ -448,17 +452,17 @@ msgstr "Arkiv"
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.posts_loop
 msgid "Article"
-msgstr ""
+msgstr "Artikel"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.posts_loop
 msgid "Articles"
-msgstr ""
+msgstr "Artiklar"
 
 #. module: website_blog
 #: model:blog.blog,name:website_blog.blog_blog_2
 msgid "Astronomy"
-msgstr ""
+msgstr "Astronomi"
 
 #. module: website_blog
 #: model_terms:blog.post,content:website_blog.blog_post_5
@@ -538,7 +542,7 @@ msgstr ""
 #. module: website_blog
 #: model:blog.post,subtitle:website_blog.blog_post_6
 msgid "Before you make your first purchase…"
-msgstr ""
+msgstr "Före du gör första inköpet..."
 
 #. module: website_blog
 #: model:blog.post,name:website_blog.blog_post_7
@@ -753,7 +757,7 @@ msgstr "Omslagsegenskaper"
 #. module: website_blog
 #: model_terms:ir.actions.act_window,help:website_blog.action_blog_post
 msgid "Create a new blog post"
-msgstr ""
+msgstr "Skapa ett nytt blogginlägg"
 
 #. module: website_blog
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__create_uid
@@ -975,7 +979,7 @@ msgstr ""
 #: model:ir.model.fields,help:website_blog.field_blog_post__message_has_error
 #: model:ir.model.fields,help:website_blog.field_blog_post__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Om markerad så har det blivit ett leveransfel för några  meddelanden."
 
 #. module: website_blog
 #: model_terms:blog.post,content:website_blog.blog_post_3
@@ -1146,7 +1150,7 @@ msgstr "Plats"
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__message_main_attachment_id
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Huvudbilaga"
 
 #. module: website_blog
 #: model:blog.post,name:website_blog.blog_post_2
@@ -1193,7 +1197,7 @@ msgstr "Medium"
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__message_has_error
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fel vid meddelandeleverans"
 
 #. module: website_blog
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__message_ids
@@ -1314,7 +1318,7 @@ msgstr "Antal meddelanden som kräver en åtgärd"
 #: model:ir.model.fields,help:website_blog.field_blog_blog__message_has_error_counter
 #: model:ir.model.fields,help:website_blog.field_blog_post__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Antal meddelanden med leveransfel"
 
 #. module: website_blog
 #: model:ir.model.fields,help:website_blog.field_blog_blog__message_unread_counter
@@ -1343,7 +1347,7 @@ msgstr ""
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_sidebar_blog_index_tags
 msgid "Others"
-msgstr ""
+msgstr "Andra"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_blog_post_blogs_display
@@ -1460,7 +1464,7 @@ msgstr "Begränsa publicering på denna webbplats."
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.view_blog_post_form
 msgid "SEO"
-msgstr ""
+msgstr "SEO"
 
 #. module: website_blog
 #: model:ir.model.fields,field_description:website_blog.field_blog_blog__is_seo_optimized
@@ -2006,7 +2010,7 @@ msgstr "Webbplatsens metatitel"
 #: model:ir.model.fields,field_description:website_blog.field_blog_post__website_meta_og_img
 #: model:ir.model.fields,field_description:website_blog.field_blog_tag__website_meta_og_img
 msgid "Website opengraph image"
-msgstr ""
+msgstr "Webbplats opengraph bild"
 
 #. module: website_blog
 #: model:blog.post,name:website_blog.blog_post_5
@@ -2112,7 +2116,7 @@ msgstr ""
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.blog_post_content
 msgid "in"
-msgstr ""
+msgstr "i"
 
 #. module: website_blog
 #: model_terms:ir.ui.view,arch_db:website_blog.opt_blog_cover_post

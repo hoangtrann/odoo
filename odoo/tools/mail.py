@@ -177,7 +177,7 @@ class _Cleaner(clean.Cleaner):
                 del el.attrib['style']
 
 
-def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=False, sanitize_style=False, strip_style=False, strip_classes=False):
+def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=False, sanitize_style=False, strip_style=False, strip_classes=False, sanitize_form=True):
     if not src:
         return src
     src = ustr(src, errors='replace')
@@ -195,7 +195,7 @@ def html_sanitize(src, silent=True, sanitize_tags=True, sanitize_attributes=Fals
         'page_structure': True,
         'style': strip_style,              # True = remove style tags/attrs
         'sanitize_style': sanitize_style,  # True = sanitize styling
-        'forms': True,                     # True = remove form tags
+        'forms': sanitize_form,            # True = remove form tags
         'remove_unknown_tags': False,
         'comments': False,
         'processing_instructions': False
@@ -611,7 +611,7 @@ def encapsulate_email(old_email, new_email):
     e.g.
     * Old From: "Admin" <admin@gmail.com>
     * New From: notifications@odoo.com
-    * Output:   "Admin (admin@gmail.com)" <notifications@odoo.com>
+    * Output: "Admin" <notifications@odoo.com>
     """
     old_email_split = getaddresses([old_email])
     if not old_email_split or not old_email_split[0]:
@@ -621,10 +621,11 @@ def encapsulate_email(old_email, new_email):
     if not new_email_split or not new_email_split[0]:
         return
 
-    if old_email_split[0][0]:
-        name_part = '%s (%s)' % old_email_split[0]
+    old_name, old_email = old_email_split[0]
+    if old_name:
+        name_part = old_name
     else:
-        name_part = old_email_split[0][1]
+        name_part = old_email.split("@")[0]
 
     return formataddr((
         name_part,

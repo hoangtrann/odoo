@@ -253,7 +253,7 @@ class PurchaseOrderLine(models.Model):
                     if move.state == 'done':
                         if move.location_dest_id.usage == "supplier":
                             if move.to_refund:
-                                total -= move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom)
+                                total -= move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom, rounding_method='HALF-UP')
                         elif move.origin_returned_move_id and move.origin_returned_move_id._is_dropshipped() and not move._is_dropshipped_returned():
                             # Edge case: the dropship is returned to the stock, no to the supplier.
                             # In this case, the received quantity on the PO is set although we didn't
@@ -262,23 +262,41 @@ class PurchaseOrderLine(models.Model):
                             pass
                         elif (
                             move.location_dest_id.usage == "internal"
-                            and move.to_refund
+                            and move.location_id.usage != "supplier"
                             and move.location_dest_id
                             not in self.env["stock.location"].search(
                                 [("id", "child_of", move.warehouse_id.view_location_id.id)]
                             )
                         ):
-                            total -= move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom)
+                            if move.to_refund:
+                                total -= move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom, rounding_method='HALF-UP')
                         else:
-                            total += move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom)
+                            total += move.product_uom._compute_quantity(move.product_uom_qty, line.product_uom, rounding_method='HALF-UP')
                 line.qty_received = total
 
-    @api.model
-    def create(self, values):
-        line = super(PurchaseOrderLine, self).create(values)
-        if line.order_id.state == 'purchase':
-            line._create_or_update_picking()
-        return line
+    @api.model_create_multi
+    def create(self, vals_list):
+        lines = super(PurchaseOrderLine, self).create(vals_list)
+
+        # when no "propagate_date", find if the product has a route with a buy rule,
+        # if yes, use the setting on the rule, if no, set "True" as default.
+        for line, vals in zip(lines, vals_list):
+            if 'propagate_date' not in vals:
+                buy_rules = line.product_id.route_ids.rule_ids.filtered(lambda r: r.action == "buy")
+                if buy_rules:
+                    rule = min(buy_rules, key=lambda r: (r.route_id.sequence, r.sequence))
+                    line.write({
+                        'propagate_date': rule.propagate_date,
+                        'propagate_date_minimum_delta': rule.propagate_date_minimum_delta,
+                    })
+                else:
+                    line.write({
+                        'propagate_date': True,
+                        'propagate_date_minimum_delta': 0,
+                    })
+
+        lines.filtered(lambda l: l.order_id.state == 'purchase')._create_or_update_picking()
+        return lines
 
     def write(self, values):
         for line in self.filtered(lambda l: not l.display_type):
@@ -292,9 +310,11 @@ class PurchaseOrderLine(models.Model):
                     moves_to_update = line.move_dest_ids.filtered(lambda m: m.state not in ('done', 'cancel'))
                 for move in moves_to_update:
                     move.date_expected = move.date_expected + relativedelta.relativedelta(days=delta_days)
+        lines = self.filtered(lambda l: l.order_id.state == 'purchase')
+        previous_product_qty = {line.id: line.product_uom_qty for line in lines}
         result = super(PurchaseOrderLine, self).write(values)
         if 'product_qty' in values:
-            self.filtered(lambda l: l.order_id.state == 'purchase')._create_or_update_picking()
+            lines.with_context(previous_product_qty=previous_product_qty)._create_or_update_picking()
         return result
 
     def unlink(self):
@@ -372,13 +392,8 @@ class PurchaseOrderLine(models.Model):
         res = []
         if self.product_id.type not in ['product', 'consu']:
             return res
-        qty = 0.0
         price_unit = self._get_stock_move_price_unit()
-        outgoing_moves, incoming_moves = self._get_outgoing_incoming_moves()
-        for move in outgoing_moves:
-            qty -= move.product_uom._compute_quantity(move.product_uom_qty, self.product_uom, rounding_method='HALF-UP')
-        for move in incoming_moves:
-            qty += move.product_uom._compute_quantity(move.product_uom_qty, self.product_uom, rounding_method='HALF-UP')
+        qty = self._get_qty_procurement()
         description_picking = self.product_id.with_context(lang=self.order_id.dest_address_id.lang or self.env.user.lang)._get_description(self.order_id.picking_type_id)
         template = {
             # truncate to 2000 to avoid triggering index limit error
@@ -406,6 +421,7 @@ class PurchaseOrderLine(models.Model):
             'propagate_cancel': self.propagate_cancel,
             'route_ids': self.order_id.picking_type_id.warehouse_id and [(6, 0, [x.id for x in self.order_id.picking_type_id.warehouse_id.route_ids])] or [],
             'warehouse_id': self.order_id.picking_type_id.warehouse_id.id,
+            'sequence': self.sequence,
         }
         diff_quantity = self.product_qty - qty
         if float_compare(diff_quantity, 0.0,  precision_rounding=self.product_uom.rounding) > 0:
@@ -417,6 +433,16 @@ class PurchaseOrderLine(models.Model):
             res.append(template)
         return res
 
+    def _get_qty_procurement(self):
+        self.ensure_one()
+        qty = 0.0
+        outgoing_moves, incoming_moves = self._get_outgoing_incoming_moves()
+        for move in outgoing_moves:
+            qty -= move.product_uom._compute_quantity(move.product_uom_qty, self.product_uom, rounding_method='HALF-UP')
+        for move in incoming_moves:
+            qty += move.product_uom._compute_quantity(move.product_uom_qty, self.product_uom, rounding_method='HALF-UP')
+        return qty
+    
     def _create_stock_moves(self, picking):
         values = []
         for line in self.filtered(lambda l: not l.display_type):

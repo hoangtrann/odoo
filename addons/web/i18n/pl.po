@@ -32,6 +32,9 @@
 # Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2021
 # Piotr Strębski <strebski@gmail.com>, 2021
 # Karol Rybak <karolrybak85@gmail.com>, 2021
+# DanielDemedziuk <daniel.demedziuk@gmail.com>, 2021
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2021
+# Jacek Michalski <michalski.jck@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -39,7 +42,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-27 10:17+0000\n"
 "PO-Revision-Date: 2019-08-26 09:15+0000\n"
-"Last-Translator: Karol Rybak <karolrybak85@gmail.com>, 2021\n"
+"Last-Translator: Jacek Michalski <michalski.jck@gmail.com>, 2022\n"
 "Language-Team: Polish (https://www.transifex.com/odoo/teams/41243/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -590,6 +593,7 @@ msgstr "Dowolny"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #: code:addons/web/static/src/xml/base.xml:0
 #: code:addons/web/static/src/xml/base.xml:0
 #: code:addons/web/static/src/xml/base.xml:0
@@ -845,6 +849,7 @@ msgstr "Widok kalendzara nie ma zdefiniowanego atrybutu 'date_start'."
 #. openerp-web
 #: code:addons/web/static/src/js/core/dialog.js:0
 #: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #: code:addons/web/static/src/js/fields/relational_fields.js:0
 #: code:addons/web/static/src/js/fields/signature.js:0
 #: code:addons/web/static/src/js/fields/upgrade_fields.js:0
@@ -916,7 +921,7 @@ msgstr ""
 #: code:addons/web/static/src/js/widgets/colorpicker_dialog.js:0
 #, python-format
 msgid "Choose"
-msgstr ""
+msgstr "Wybierz"
 
 #. module: web
 #. openerp-web
@@ -1896,7 +1901,7 @@ msgstr "Jestem pewien."
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "I want to update data (import-compatible export)"
-msgstr ""
+msgstr "Chcę zaktualizować dane (eksport zgodny z importem)"
 
 #. module: web
 #. openerp-web
@@ -3294,7 +3299,7 @@ msgstr "Zapisz rekord"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Save as :"
-msgstr ""
+msgstr "Zapisz jako:"
 
 #. module: web
 #. openerp-web

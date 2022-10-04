@@ -1102,7 +1102,7 @@ msgstr ""
 #. module: l10n_ar
 #: code:addons/l10n_ar/models/account_move.py:0
 #, python-format
-msgid "There must be one and only one VAT tax per line. Check line \"%s\""
+msgid "There should be a single tax from the \"VAT\" tax group per line, add it to \"%s\". If you already have it, please check the tax configuration, in advanced options, in the corresponding field \"Tax Group\"."
 msgstr ""
 
 #. module: l10n_ar
@@ -1325,6 +1325,12 @@ msgstr ""
 #: code:addons/l10n_ar/models/l10n_latam_document_type.py:0
 #, python-format
 msgid "is not a valid value for"
+msgstr ""
+
+#. module: l10n_ar
+#: code:addons/l10n_ar/models/l10n_latam_document_type.py:0
+#, python-format
+msgid "%s - Letter %s Documents"
 msgstr ""
 
 #. module: l10n_ar

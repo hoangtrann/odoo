@@ -9,9 +9,11 @@
 # Dao Nguyen <trucdao.uel@gmail.com>, 2019
 # Dung Nguyen Thi <dungnt@trobz.com>, 2019
 # Phuc Tran Thanh <phuctran.odoo@gmail.com>, 2019
-# Duy BQ <duybq86@gmail.com>, 2020
 # Martin Trigaux, 2020
 # Nancy Momoland <thanhnguyen.icsc@gmail.com>, 2020
+# Roy Le <roy.le@viindoo.com>, 2021
+# Vo Thanh Thuy, 2021
+# Duy BQ <duybq86@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -19,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-27 09:21+0000\n"
 "PO-Revision-Date: 2019-08-26 09:14+0000\n"
-"Last-Translator: Nancy Momoland <thanhnguyen.icsc@gmail.com>, 2020\n"
+"Last-Translator: Duy BQ <duybq86@gmail.com>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1605,8 +1607,8 @@ msgstr "Địa điểm khách hàng"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_dhl
-msgid "DHL Connector"
-msgstr "DHL Connector"
+msgid "DHL Express Connector"
+msgstr "Kết nối DHL Express"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_report_stock_quantity__date
@@ -2631,8 +2633,8 @@ msgid ""
 "If this is checked only, it will suppose you want to create new Lots/Serial "
 "Numbers, so you can provide them in a text field. "
 msgstr ""
-"Nếu chỉ trường này được đánh dấu, Odoo sẽ tin rằng bạn muốn tạo mới số lô"
-"/sê-ri, để bạn có thể cung cấp số trong một trường kiểu text."
+"Nếu chỉ trường này được đánh dấu, Odoo sẽ tin rằng bạn muốn tạo mới số "
+"lô/sê-ri, để bạn có thể cung cấp số trong một trường kiểu text."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move_line__picking_type_use_existing_lots
@@ -2996,17 +2998,29 @@ msgstr "Số lượng có thể chỉnh sửa được không"
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
-"It is not possible to reserve more products of %s than you have in stock."
-msgstr "Nó không thể giữ trước nhiều sản phẩm %s hơn bạn có trong kho."
+"It is not possible to unreserve more products of %s than you have in "
+"stock.The correction could unreserve some operations with problematics "
+"products."
+msgstr ""
+"Không thể đặt trước số lượng sản phẩm %s nhiều hơn số lượng sản phẩm bạn có "
+"trong kho. Việc hủy đặt trước một vài hoạt động sẽ dễ xảy ra nhiều vấn đề "
+"phức tạp."
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
-"It is not possible to unreserve more products of %s than you have in stock."
+"It is not possible to unreserve more products of %s than you have in stock. "
+"Contact an administrator."
 msgstr ""
-"Bạn không thể hủy giữ hàng được nhiều sản phẩm %s hơn số lượng bạn có trong "
-"kho."
+"Không thể đặt trước số lượng sản phẩm %s nhiều hơn số lượng bạn có trong "
+"kho. Liên hệ với quản trị viên."
+
+#. module: stock
+#: code:addons/stock/models/stock_quant.py:0
+#, python-format
+msgid "Try our automated action to fix it"
+msgstr "Thử thực hiện tự động để sửa nó."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking__move_type
@@ -6173,14 +6187,12 @@ msgstr "Sản phẩm"
 #, python-format
 msgid ""
 "The quantity done for the product \"%s\" doesn't respect the rounding "
-"precision                                   defined on the unit of measure "
-"\"%s\". Please change the quantity done or the"
-"                                   rounding precision of your unit of "
-"measure."
+"precision defined on the unit of measure \"%s\". Please change the quantity "
+"done or the rounding precision of your unit of measure."
 msgstr ""
-"Số lượng hoàn thành cho sản phẩm  \"%s\" không phù hợp độ làm tròn chính xác"
-" được xác định trên đơn vị tính  \"%s\". Vui lòng thay đổi số lượng hoàn "
-"thành hoặc độ chính xác làm tròn của đơn vị tính đó."
+"Số lượng hoàn tất cho sản phẩm \"%s\" không chính xác khi có làm tròn theo "
+"đơn vị tính \"%s\". Xin hãy thay đổi số lượng hoàn thành hoặc số lượng làm "
+"tròn của đơn vị tính trước."
 
 #. module: stock
 #: code:addons/stock/models/stock_move.py:0
@@ -6429,6 +6441,9 @@ msgid ""
 "better solution could be to archive the product and create a new one "
 "instead."
 msgstr ""
+"Sản phẩm này đã được sử dụng trong ít nhất một đợt hàng tồn kho. Không nên "
+"thay đổi Loại Sản phẩm vì nó có thể dẫn đến sự mâu thuẫn. Giải pháp tốt hơn "
+"có thể là lưu trữ sản phẩm và tạo một sản phẩm mới thay thế."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_change_product_qty__new_quantity
@@ -6775,7 +6790,7 @@ msgstr "Luồng không rõ."
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
 msgid "Unlock"
-msgstr "Hủy khoá"
+msgstr "Mở khoá"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_quant_package_form
@@ -6802,6 +6817,13 @@ msgid "Unreserve"
 msgstr "Hủy giữ hàng"
 
 #. module: stock
+#: code:addons/stock/models/stock_inventory.py:0
+#: code:addons/stock/models/stock_inventory.py:0
+#, python-format
+msgid "Unsupported search on %s outside of an Inventory Adjustment"
+msgstr "Không hổ trợ tìm trên %s ngoài một Phiếu điều chỉnh Tồn kho"
+
+#. module: stock
 #: model:ir.ui.menu,name:stock.menu_stock_uom_form_action
 #: model_terms:ir.ui.view,arch_db:stock.stock_inventory_line_tree2
 msgid "UoM"
@@ -6819,6 +6841,7 @@ msgstr "Cập nhật số lượng sản phẩm"
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
+#: model:ir.actions.act_window,name:stock.dashboard_open_quants
 #: model_terms:ir.ui.view,arch_db:stock.product_form_view_procurement_button
 #: model_terms:ir.ui.view,arch_db:stock.product_product_view_form_easy_inherit_stock
 #: model_terms:ir.ui.view,arch_db:stock.product_template_form_view_procurement_button
@@ -7574,6 +7597,18 @@ msgstr "Bạn cần có số sê-ri trước khi tạo thêm."
 #, python-format
 msgid "You need to supply a Lot/Serial number for product %s."
 msgstr "Bạn cần cung cấp số lô/sê-ri của sản phẩm %s."
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+#, python-format
+msgid ""
+"You should not use a planned internal transfer to move some products between"
+" two warehouses. Instead, use an immediate internal transfer or the resupply"
+" route."
+msgstr ""
+"Bạn không nên dùng một kế hoạch dịch chuyển nội bộ để dịch chuyển một vài "
+"sản phẩm giữa hai Kho hàng. Thay vào đó, hãy sử dụng phương thức chuyển giao"
+" nội bộ ngay lập tức hoặc Loan báo cung ứng."
 
 #. module: stock
 #: code:addons/stock/models/stock_warehouse.py:0

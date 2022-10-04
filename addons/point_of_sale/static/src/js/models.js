@@ -699,7 +699,7 @@ exports.PosModel = Backbone.Model.extend({
         }
         for (var i = 0; i < jsons.length; i++) {
             var json = jsons[i];
-            if (json.pos_session_id !== this.pos_session.id && json.lines.length > 0) {
+            if (json.pos_session_id !== this.pos_session.id && (json.lines.length > 0 || json.statement_ids.length > 0)) {
                 orders.push(new exports.Order({},{
                     pos:  this,
                     json: json,
@@ -1085,7 +1085,7 @@ exports.PosModel = Backbone.Model.extend({
         }
 
         if(parsed_code.type === 'price'){
-            selectedOrder.add_product(product, {price:parsed_code.value});
+            selectedOrder.add_product(product, {price:parsed_code.value, extras:{price_manually_set: true}});
         }else if(parsed_code.type === 'weight'){
             selectedOrder.add_product(product, {quantity:parsed_code.value, merge:false});
         }else if(parsed_code.type === 'discount'){
@@ -1328,7 +1328,7 @@ exports.PosModel = Backbone.Model.extend({
                 else if(tax.amount_type === 'division')
                     incl_division_amount += tax.amount;
                 else if(tax.amount_type === 'fixed')
-                    incl_fixed_amount += quantity * tax.amount
+                    incl_fixed_amount += Math.abs(quantity) * tax.amount
                 else{
                     var tax_amount = self._compute_all(tax, base, quantity);
                     incl_fixed_amount += tax_amount;
@@ -1386,6 +1386,9 @@ exports.PosModel = Backbone.Model.extend({
     },
 
     electronic_payment_interfaces: {},
+    htmlToImgLetterRendering() {
+        return false;
+    }
 });
 
 /**
@@ -1793,7 +1796,7 @@ exports.Orderline = Backbone.Model.extend({
     can_be_merged_with: function(orderline){
         var price = parseFloat(round_di(this.price || 0, this.pos.dp['Product Price']).toFixed(this.pos.dp['Product Price']));
         var order_line_price = orderline.get_product().get_price(orderline.order.pricelist, this.get_quantity());
-        order_line_price = orderline.compute_fixed_price(order_line_price);
+        order_line_price = round_di(orderline.compute_fixed_price(order_line_price), this.pos.currency.decimals);
         if( this.get_product().id !== orderline.get_product().id){    //only orderline of the same product can be merged
             return false;
         }else if(!this.get_unit() || !this.get_unit().is_pos_groupable){
@@ -2412,7 +2415,9 @@ exports.Order = Backbone.Model.extend({
         var orderlines = json.lines;
         for (var i = 0; i < orderlines.length; i++) {
             var orderline = orderlines[i][2];
-            this.add_orderline(new exports.Orderline({}, {pos: this.pos, order: this, json: orderline}));
+            if(this.pos.db.get_product_by_id(orderline.product_id)){
+                this.add_orderline(new exports.Orderline({}, {pos: this.pos, order: this, json: orderline}));
+            }
         }
 
         var paymentlines = json.statement_ids;
@@ -2835,6 +2840,7 @@ exports.Order = Backbone.Model.extend({
      * Stops a payment on the terminal if one is running
      */
     stop_electronic_payment: function () {
+        var self = this;
         var lines = this.get_paymentlines();
         var line = lines.find(function (line) {
             var status = line.get_payment_status();
@@ -2844,6 +2850,16 @@ exports.Order = Backbone.Model.extend({
             line.set_payment_status('waitingCancel');
             line.payment_method.payment_terminal.send_payment_cancel(this, line.cid).finally(function () {
                 line.set_payment_status('retry');
+
+                // If stop_electronic_payment is triggered by pressing the back button, and you wait a bit, this
+                // payment status update will happen when on the main screen. If you then press the pay button
+                // again, the payment will be in the retry state as intended, because moving to the payment screen
+                // re-renders the lines. If however after pressing the back button, you immediately press the pay button
+                // again, the state will still update, but the line in the UI won't, because there's nothing triggering a
+                // re-render on it. Hence we do that here.
+                if (self.pos.chrome.gui.current_screen && self.pos.chrome.gui.current_screen.render_paymentlines) {
+                    self.pos.chrome.gui.current_screen.render_paymentlines();
+                }
             });
         }
     },

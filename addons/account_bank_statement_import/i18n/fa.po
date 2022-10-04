@@ -13,6 +13,9 @@
 # Hamid Reza Kaveh <hamidrkp@riseup.net>, 2020
 # Hamed Mohammadi <hamed@dehongi.com>, 2020
 # Mohsen Mohammadi <iammohsen.123@gmail.com>, 2021
+# Far Har <fhari1234@gmail.com>, 2021
+# M.Hossein S.Farvashani <Farvashani@gmail.com>, 2021
+# Hanna Kheradroosta, 2022
 # 
 msgid ""
 msgstr ""
@@ -20,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-27 09:21+0000\n"
 "PO-Revision-Date: 2019-08-26 09:08+0000\n"
-"Last-Translator: Mohsen Mohammadi <iammohsen.123@gmail.com>, 2021\n"
+"Last-Translator: Hanna Kheradroosta, 2022\n"
 "Language-Team: Persian (https://www.transifex.com/odoo/teams/41243/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,6 +181,8 @@ msgid ""
 "Cannot find in which journal import this statement. Please manually select a"
 " journal."
 msgstr ""
+"نمی توان پیدا کرد که این عبارت را در کدام روزنامه وارد کرد. لطفا به صورت "
+"دستی یک روزنامه انتخاب کنید."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__refund_sequence
@@ -185,6 +190,8 @@ msgid ""
 "Check this box if you don't want to share the same sequence for invoices and"
 " credit notes made from this journal"
 msgstr ""
+"این گزینه را تیک کنید اگر نمی خواهید دنباله مشابهی را برای فاکتورها و "
+"یادداشت‌های اعتباری ساخته شده از این دفترروزنامه به اشتراک بگذارید"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__color
@@ -218,6 +225,8 @@ msgid ""
 "Could not make sense of the given file.\n"
 "Did you install the module to support this type of file ?"
 msgstr ""
+"نمی توان فایل داده شده را معنی کرد.\n"
+"آیا ماژول را برای پشتیبانی از این نوع فایل نصب کردید؟"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import__create_uid
@@ -280,7 +289,7 @@ msgstr "دنباله‌ی ورودی"
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import__attachment_ids
 msgid "Files"
-msgstr ""
+msgstr "فایل ها"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__message_follower_ids
@@ -313,6 +322,8 @@ msgid ""
 "Get you bank statements in electronic format from your bank and select them "
 "here."
 msgstr ""
+"صورت وضعیت‌های بانکی خود را به صورت الکترونیکی از بانک خود دریافت کرده و در "
+"اینجا انتخاب کنید."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import__id
@@ -350,6 +361,7 @@ msgid ""
 "If it contains transactions for more than one account, it must be imported "
 "on each of them."
 msgstr ""
+"اگر دارای تراکنش برای بیش از یک حساب باشد، باید در هر یک از آنها وارد شود."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__restrict_mode_hash_table
@@ -357,6 +369,8 @@ msgid ""
 "If ticked, the accounting entry or invoice receives a hash as soon as it is "
 "posted and cannot be modified anymore."
 msgstr ""
+"در صورت انتخاب ، سند یا فاکتور حسابداری یک مقدار رمزنگاری را به محض ارسال "
+"دریافت می کند و دیگر قابل تغییر نیست."
 
 #. module: account_bank_statement_import
 #: code:addons/account_bank_statement_import/account_journal.py:0
@@ -383,7 +397,7 @@ msgstr "ورود از فایل صورتحساب"
 #. module: account_bank_statement_import
 #: model:ir.actions.act_window,name:account_bank_statement_import.install_more_import_formats_action
 msgid "Install Import Format"
-msgstr ""
+msgstr "نصب فرمت ورودی"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__message_is_follower
@@ -421,7 +435,7 @@ msgstr "ایجاد روزنامه"
 #. module: account_bank_statement_import
 #: model:ir.model,name:account_bank_statement_import.model_account_bank_statement_import_journal_creation
 msgid "Journal Creation on Bank Statement Import"
-msgstr ""
+msgstr "ایجاد روزنامه در مورد ورود صورت وضعیت بانکی"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__journal_group_ids
@@ -444,6 +458,8 @@ msgid ""
 "Just click OK to create the account/journal and finish the upload. If this "
 "was a mistake, hit cancel to abort the upload."
 msgstr ""
+"فقط روی OK کلیک کنید تا حساب/روزنامه ایجاد شود و آپلود به پایان برسد. اگر "
+"اشتباه بود، لغو را فشار دهید تا آپلود لغو شود."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__kanban_dashboard
@@ -476,7 +492,7 @@ msgstr "آخرین به روز رسانی در"
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__restrict_mode_hash_table
 msgid "Lock Posted Entries with Hash"
-msgstr ""
+msgstr "قفل کردن اسناد تایید شده با رمزنگاری"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__loss_account_id
@@ -495,6 +511,9 @@ msgid ""
 "Electronic: Get paid automatically through a payment acquirer by requesting a transaction on a card saved by the customer when buying or subscribing online (payment token).\n"
 "Batch Deposit: Encase several customer checks at once by generating a batch deposit to submit to your bank. When encoding the bank statement in Odoo,you are suggested to reconcile the transaction with the batch deposit. Enable this option from the settings."
 msgstr ""
+"روش دستی: به صورت نقدی ، چک یا هر روش دیگری خارج از موارد تعیین شده دریافت کنید\n"
+"روش الکترونیکی: با درخواست تراکنش روی کارت ذخیره شده توسط مشتری در هنگام خرید یا اشتراک آنلاین (نشان پرداخت) ، به طور خودکار از طریق دریافت کننده پرداخت پول دریافت کنید.\n"
+"سپرده دسته ای: چندین چک مشتری را همزمان با ایجاد سپرده دسته ای به بانک خود ارسال کنید. هنگام کدگذاری صورت حساب بانکی در سیستم ، به شما پیشنهاد می شود که معامله را با سپرده دسته ای تطبیق دهید. این گزینه را از تنظیمات فعال کنید."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__outbound_payment_method_ids
@@ -503,6 +522,9 @@ msgid ""
 "Check:Pay bill by check and print it from Odoo.\n"
 "SEPA Credit Transfer: Pay bill from a SEPA Credit Transfer file you submit to your bank. Enable this option from the settings."
 msgstr ""
+"روش دستی: صورتحساب را به صورت نقدی یا هر روش دیگری خارج از سیستم پرداخت کنید.\n"
+"چک: صورت حساب را با چک پرداخت کنید و آن را از سیستم چاپ کنید.\n"
+"انتقال اعتبار SEPA: صورتحساب را از یک پرونده انتقال اعتبار SEPA که به بانک خود ارسال می کنید ، پرداخت کنید. این گزینه را از تنظیمات فعال کنید."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__message_has_error
@@ -538,7 +560,7 @@ msgstr "شماره بعدی"
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
 #, python-format
 msgid "No currency found matching '%s'."
-msgstr ""
+msgstr "ارزی مطابق با '%s' یافت نشد."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__message_needaction_counter
@@ -593,7 +615,7 @@ msgstr "خطای تحویل پیامک"
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__secure_sequence_id
 msgid "Secure Sequence"
-msgstr ""
+msgstr "توالی امن"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__type
@@ -603,11 +625,15 @@ msgid ""
 "Select 'Cash' or 'Bank' for journals that are used in customer or vendor payments.\n"
 "Select 'General' for miscellaneous operations journals."
 msgstr ""
+"\"فروش\" را برای اسناد فاکتورهای مشتری انتخاب کنید.\n"
+"\"خرید\" را برای اسناد صورت حسابهای فروشنده انتخاب کنید.\n"
+"\"نقد\" یا \"بانک\" را برای اسنادی که در پرداخت های مشتریان یا فروشندگان استفاده می شوند انتخاب کنید.\n"
+"\"عمومی\" را برای اسناد عملیات متفرقه انتخاب کنید."
 
 #. module: account_bank_statement_import
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_import.account_bank_statement_import_view
 msgid "Select Files"
-msgstr ""
+msgstr "فایل ها را انتخاب کنید"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__sequence
@@ -617,12 +643,12 @@ msgstr "دنباله"
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__secure_sequence_id
 msgid "Sequence to use to ensure the securisation of data"
-msgstr ""
+msgstr "ترتیب استفاده برای اطمینان از امنیت داده ها"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__active
 msgid "Set active to false to hide the Journal without removing it."
-msgstr ""
+msgstr "عدم فعال سازی باعث میگردد تا سند بدون حذف پنهان گردد ."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__code
@@ -654,13 +680,15 @@ msgid ""
 "In order to proceed with the upload, you need to create a bank journal for "
 "this account."
 msgstr ""
+"حساب صورت حسابی که بارگذاری می کنید هنوز در Odoo ثبت نشده است. برای ادامه "
+"آپلود، باید یک روزنامه بانکی برای این حساب ایجاد کنید."
 
 #. module: account_bank_statement_import
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
 #, python-format
 msgid ""
 "The account of this statement (%s) is not the same as the journal (%s)."
-msgstr ""
+msgstr "حساب این صورتحساب (%s) با روزنامه(%s) یکسان نیست."
 
 #. module: account_bank_statement_import
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
@@ -668,7 +696,7 @@ msgstr ""
 msgid ""
 "The currency of the bank statement (%s) is not the same as the currency of "
 "the journal (%s)."
-msgstr ""
+msgstr "واحد پول صورت وضعیت بانکی (%s) با واحد پول روزنامه (%s) یکسان نیست."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__currency_id
@@ -708,13 +736,13 @@ msgstr ""
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
 #, python-format
 msgid "This file doesn't contain any statement for account %s."
-msgstr ""
+msgstr "این فایل شامل هیچ صورتحسابی برای حساب %s ندارد."
 
 #. module: account_bank_statement_import
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
 #, python-format
 msgid "This file doesn't contain any transaction for account %s."
-msgstr ""
+msgstr "این فایل حاوی هیچ تراکنشی برای حساب %s نیست."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__type
@@ -750,7 +778,7 @@ msgstr "درونش وضعیت بانک"
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__sequence
 msgid "Used to order Journals in the dashboard view"
-msgstr ""
+msgstr "برای اسناد سفارش در نمای داشبورد استفاده می شود"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__loss_account_id
@@ -758,6 +786,8 @@ msgid ""
 "Used to register a loss when the ending balance of a cash register differs "
 "from what the system computes"
 msgstr ""
+"هنگامی که موجودی پایانی صندوق فروش با محاسبه سیستم متفاوت است ، برای ثبت "
+"زیان استفاده می شود"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__profit_account_id
@@ -765,6 +795,8 @@ msgid ""
 "Used to register a profit when the ending balance of a cash register differs"
 " from what the system computes"
 msgstr ""
+"برای ثبت سود زمانی استفاده می شود که موجودی پایانی صندوق فروش با محاسبه "
+"سیستم متفاوت باشد"
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,field_description:account_bank_statement_import.field_account_bank_statement_import_journal_creation__website_message_ids
@@ -785,7 +817,7 @@ msgstr "آیا این روزنامه باید روی داشبورد نشان د�
 #: code:addons/account_bank_statement_import/account_bank_statement_import.py:0
 #, python-format
 msgid "You already have imported that file."
-msgstr ""
+msgstr "شما قبلا آن فایل را وارد کرده اید."
 
 #. module: account_bank_statement_import
 #: model:ir.model.fields,help:account_bank_statement_import.field_account_bank_statement_import_journal_creation__invoice_reference_model
@@ -803,6 +835,9 @@ msgid ""
 "invoices, once validated, to help the customer to refer to that particular "
 "invoice when making the payment."
 msgstr ""
+"در اینجا می توانید ارتباط پیش فرض را که در صورتحساب مشتری ظاهر می شود ، پس "
+"از تأیید ، تنظیم کنید تا به مشتری کمک کند هنگام پرداخت به آن فاکتور خاص "
+"مراجعه کند."
 
 #. module: account_bank_statement_import
 #: model_terms:ir.ui.view,arch_db:account_bank_statement_import.account_bank_statement_import_view

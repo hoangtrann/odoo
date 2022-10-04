@@ -444,7 +444,7 @@ class PaymentAcquirer(models.Model):
                 'partner_zip': partner.zip,
                 'partner_city': partner.city,
                 'partner_address': _partner_format_address(partner.street, partner.street2),
-                'partner_country_id': partner.country_id.id or self.env['res.company']._company_default_get().country_id.id,
+                'partner_country_id': partner.country_id.id or self.env.company.country_id.id,
                 'partner_country': partner.country_id,
                 'partner_phone': partner.phone,
                 'partner_state': partner.state_id,
@@ -496,7 +496,9 @@ class PaymentAcquirer(models.Model):
             values = method(values)
 
         values.update({
-            'tx_url': self._context.get('tx_url', self.get_form_action_url()),
+            'tx_url':  self._context.get(
+                'tx_url', self.with_context(form_action_url_values=values).get_form_action_url()
+            ),
             'submit_class': self._context.get('submit_class', 'btn btn-link'),
             'submit_txt': self._context.get('submit_txt'),
             'acquirer': self,
